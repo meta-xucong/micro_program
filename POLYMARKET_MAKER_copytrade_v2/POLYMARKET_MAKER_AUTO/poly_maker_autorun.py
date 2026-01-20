@@ -89,6 +89,11 @@ def _coerce_float(value: Any) -> Optional[float]:
     return None
 
 
+def _env_flag(name: str) -> bool:
+    raw = os.getenv(name, "").strip().lower()
+    return raw in {"1", "true", "yes", "on", "y", "debug"}
+
+
 def _ceil_to_precision(value: float, decimals: int) -> float:
     factor = 10 ** decimals
     return math.ceil(value * factor - 1e-12) / factor
@@ -344,6 +349,7 @@ class AutoRunManager:
         self._ws_thread_stop: Optional[threading.Event] = None
         self._ws_token_ids: List[str] = []
         self._ws_aggregator_thread: Optional[threading.Thread] = None
+        self._ws_debug_raw = _env_flag("POLY_WS_DEBUG_RAW")
 
     # ========== 核心循环 ==========
     def run_loop(self) -> None:
@@ -469,7 +475,7 @@ class AutoRunManager:
                 "asset_ids": token_ids,
                 "label": "autorun-aggregator",
                 "on_event": self._on_ws_event,
-                "verbose": False,
+                "verbose": self._ws_debug_raw,
                 "stop_event": stop_event,
             },
             daemon=True,
@@ -502,6 +508,12 @@ class AutoRunManager:
             self._ws_last_stats_log = 0.0
 
         self._ws_event_count += 1
+
+        if self._ws_debug_raw:
+            try:
+                print(f"[WS][RAW] {json.dumps(ev, ensure_ascii=False)}")
+            except Exception:
+                print(f"[WS][RAW] {ev}")
 
         if not isinstance(ev, dict):
             self._ws_filtered_count += 1
