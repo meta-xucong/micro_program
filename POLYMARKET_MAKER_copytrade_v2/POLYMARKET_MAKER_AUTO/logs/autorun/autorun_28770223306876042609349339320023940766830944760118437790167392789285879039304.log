@@ -1,0 +1,751 @@
+[CONFIG] 使用配置文件: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/POLYMARKET_MAKER_AUTO/data/run_params_28770223306876042609349339320023940766830944760118437790167392789285879039304.json
+[INIT] API 凭证已验证。
+[INIT] ClobClient 就绪。
+[INFO] 未提供 market_url，尝试通过 token_id 获取市场元数据。
+[INFO] 市场/子问题标题: Russia x Ukraine ceasefire by January 31, 2026?
+[INFO] 使用 token_id: 28770223306876042609349339320023940766830944760118437790167392789285879039304
+[INFO] 市场标注时区: America/New_York
+[INFO] 市场计划截止时间 (UTC): 2026-01-31T00:00:00+00:00
+[WARN] 自动获取的截止日期缺少具体时刻，已按默认配置设置截止时间为 2026-01-31T23:59:00-05:00 (America/New_York)。
+[INFO] 监控目标结束时间 (UTC): 2026-02-01T04:59:00+00:00
+[INFO] 未能识别市场价格精度，默认按盈利百分比下限 0.300% 执行。
+[INIT] 目标 token_id: 28770223306876042609349339320023940766830944760118437790167392789285879039304
+[INIT] 已读取手动份数 10.0，模式：总持仓目标。
+[INIT] 卖出挂单模式：aggressive
+[INIT] 卖出后递增买入阈值已启用，步长 0.0200%。
+[INIT] 价格停滞监控窗口 120.0 分钟，阈值 0.0000%。
+[INIT] 启动后无行情自动退出阈值 10.0 分钟。
+[INIT] 卖出挂单空窗释放阈值 6.0 小时。
+[INFO] 倒计时卖出模式将在市场结束前 300 分钟开启。
+[RUN] 监听行情中… 输入 stop / exit 可手动停止。
+[WS] 连接已建立，等待行情推送…
+[PX] bid=0.9870 ask=0.9880 last=0.9990 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 1
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9890 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 2
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9890 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 2
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 3
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 4
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 5
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 6
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 7
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 8
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 9
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 10
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 10
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 11
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 12
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 13
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9850 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9970 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9720 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9720 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9970 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9980 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9970 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9970 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9970 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9930 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9970 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9970 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 14
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9950 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9880 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.9875 / 低 0.9875
+[PX] bid=0.9870 ask=0.9880 last=0.9870 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 15
