@@ -52,6 +52,7 @@ DEFAULT_GLOBAL_CONFIG = {
     "topic_start_cooldown_sec": 5.0,
     "log_excerpt_interval_sec": 15.0,
     "runtime_status_path": str(PROJECT_ROOT / "data" / "autorun_status.json"),
+    "ws_debug_raw": False,
 }
 ORDER_SIZE_DECIMALS = 4  # Polymarket 下单数量精度（按买单精度取整）
 
@@ -87,6 +88,11 @@ def _coerce_float(value: Any) -> Optional[float]:
     except Exception:
         return None
     return None
+
+
+def _env_flag(name: str) -> bool:
+    raw = os.getenv(name, "").strip().lower()
+    return raw in {"1", "true", "yes", "on", "y", "debug"}
 
 
 def _ceil_to_precision(value: float, decimals: int) -> float:
@@ -200,12 +206,14 @@ class GlobalConfig:
     runtime_status_path: Path = field(
         default_factory=lambda: Path(DEFAULT_GLOBAL_CONFIG["runtime_status_path"])
     )
+    ws_debug_raw: bool = bool(DEFAULT_GLOBAL_CONFIG["ws_debug_raw"])
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "GlobalConfig":
         data = data or {}
         scheduler = data.get("scheduler") or {}
         paths = data.get("paths") or {}
+        debug = data.get("debug") or {}
         flat_overrides = {k: v for k, v in data.items() if k not in {"scheduler", "paths"}}
         merged = {**DEFAULT_GLOBAL_CONFIG, **flat_overrides}
 
@@ -282,6 +290,11 @@ class GlobalConfig:
                 merged.get("log_excerpt_interval_sec", cls.log_excerpt_interval_sec)
             ),
             runtime_status_path=runtime_status_path,
+            ws_debug_raw=bool(
+                debug.get("ws_debug_raw")
+                or debug.get("ws_raw")
+                or merged.get("ws_debug_raw", cls.ws_debug_raw)
+            ),
         )
 
     def ensure_dirs(self) -> None:
@@ -344,6 +357,7 @@ class AutoRunManager:
         self._ws_thread_stop: Optional[threading.Event] = None
         self._ws_token_ids: List[str] = []
         self._ws_aggregator_thread: Optional[threading.Thread] = None
+        self._ws_debug_raw = _env_flag("POLY_WS_DEBUG_RAW") or self.config.ws_debug_raw
 
     # ========== 核心循环 ==========
     def run_loop(self) -> None:
@@ -469,7 +483,7 @@ class AutoRunManager:
                 "asset_ids": token_ids,
                 "label": "autorun-aggregator",
                 "on_event": self._on_ws_event,
-                "verbose": False,
+                "verbose": self._ws_debug_raw,
                 "stop_event": stop_event,
             },
             daemon=True,
@@ -502,6 +516,12 @@ class AutoRunManager:
             self._ws_last_stats_log = 0.0
 
         self._ws_event_count += 1
+
+        if self._ws_debug_raw:
+            try:
+                print(f"[WS][RAW] {json.dumps(ev, ensure_ascii=False)}")
+            except Exception:
+                print(f"[WS][RAW] {ev}")
 
         if not isinstance(ev, dict):
             self._ws_filtered_count += 1
