@@ -1,0 +1,187 @@
+[2026-01-20 17:04:46,645][INFO] copytrade 启动 | poll_interval=60.0s
+[2026-01-20 17:04:46,647][INFO] 初始化目标账户状态，忽略已有仓位: account=0x96489abcb9f583d6835c8ef95ffc923d05a86825
+[2026-01-20 17:04:46,647][INFO] 初始化目标账户状态，忽略已有仓位: account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5
+[2026-01-20 17:04:46,972][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:04:46,972][INFO] no token updates, total=0
+[2026-01-20 17:05:47,261][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:05:47,586][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:05:47,869][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:05:47,869][INFO] no token updates, total=0
+[2026-01-20 17:06:48,369][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:06:48,718][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:06:49,259][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:06:49,259][INFO] no token updates, total=0
+[2026-01-20 17:07:49,585][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:07:49,881][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:07:50,137][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:07:50,138][INFO] no token updates, total=0
+[2026-01-20 17:08:50,449][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=1 since_ms=1768946686647
+[2026-01-20 17:08:50,766][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:08:51,072][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946868000
+[2026-01-20 17:08:51,073][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=1)
+[2026-01-20 17:09:51,398][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768946868000
+[2026-01-20 17:09:51,693][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:09:51,992][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:09:51,993][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=2)
+[2026-01-20 17:10:52,292][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:10:52,574][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=0 normalized=0 since_ms=1768946686647
+[2026-01-20 17:10:52,873][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:10:52,873][INFO] no token updates, total=2
+[2026-01-20 17:11:53,179][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:11:53,474][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=1 since_ms=1768946686647
+[2026-01-20 17:11:53,475][INFO] skip sell signal before buy introduction: account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 token=58129684054395564250926019557471353578777913599136727403572495497212893924365
+[2026-01-20 17:11:53,773][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:11:53,774][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=3)
+[2026-01-20 17:12:54,079][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:12:54,403][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:12:54,701][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:12:54,701][INFO] no token updates, total=3
+[2026-01-20 17:13:55,014][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:13:55,314][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:13:55,617][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:13:55,617][INFO] no token updates, total=3
+[2026-01-20 17:14:55,921][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:14:56,236][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:14:56,516][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768946960000
+[2026-01-20 17:14:56,516][INFO] no token updates, total=3
+[2026-01-20 17:15:56,824][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768946960000
+[2026-01-20 17:15:57,115][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:15:57,409][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:15:57,410][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=4)
+[2026-01-20 17:16:57,706][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:16:58,014][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:16:58,340][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:16:58,340][INFO] no token updates, total=4
+[2026-01-20 17:17:58,643][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:17:58,938][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:17:59,219][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:17:59,219][INFO] no token updates, total=4
+[2026-01-20 17:18:59,532][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:18:59,809][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:19:00,053][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:19:00,053][INFO] no token updates, total=4
+[2026-01-20 17:20:00,352][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:20:00,678][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:20:00,922][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947328000
+[2026-01-20 17:20:00,923][INFO] no token updates, total=4
+[2026-01-20 17:21:01,205][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768947328000
+[2026-01-20 17:21:01,519][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:21:01,860][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947654000
+[2026-01-20 17:21:01,863][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=5)
+[2026-01-20 17:22:02,154][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947654000
+[2026-01-20 17:22:02,438][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:22:02,748][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947654000
+[2026-01-20 17:22:02,748][INFO] no token updates, total=5
+[2026-01-20 17:23:03,051][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947654000
+[2026-01-20 17:23:03,348][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:23:03,628][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947654000
+[2026-01-20 17:23:03,628][INFO] no token updates, total=5
+[2026-01-20 17:24:03,940][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947654000
+[2026-01-20 17:24:04,262][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947096000
+[2026-01-20 17:24:04,558][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947654000
+[2026-01-20 17:24:04,558][INFO] no token updates, total=5
+[2026-01-20 17:25:04,845][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=3 normalized=2 since_ms=1768947654000
+[2026-01-20 17:25:05,126][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=2 normalized=1 since_ms=1768947096000
+[2026-01-20 17:25:05,127][INFO] skip sell signal before buy introduction: account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 token=82991837887127223585838300135823820957946688171642633953055760547186260528157
+[2026-01-20 17:25:05,468][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947898000
+[2026-01-20 17:25:05,469][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=8)
+[2026-01-20 17:26:05,758][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947898000
+[2026-01-20 17:26:06,077][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:26:06,384][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947898000
+[2026-01-20 17:26:06,384][INFO] no token updates, total=8
+[2026-01-20 17:27:06,700][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947898000
+[2026-01-20 17:27:06,999][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:27:07,244][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768947898000
+[2026-01-20 17:27:07,244][INFO] no token updates, total=8
+[2026-01-20 17:28:07,578][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768947898000
+[2026-01-20 17:28:07,906][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:28:08,212][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948028000
+[2026-01-20 17:28:08,213][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=9)
+[2026-01-20 17:29:08,528][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768948028000
+[2026-01-20 17:29:08,828][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:29:09,586][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948118000
+[2026-01-20 17:29:09,587][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=9)
+[2026-01-20 17:30:09,903][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768948118000
+[2026-01-20 17:30:10,211][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:30:10,505][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948198000
+[2026-01-20 17:30:10,505][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=9)
+[2026-01-20 17:31:10,798][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948198000
+[2026-01-20 17:31:11,105][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:31:11,382][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948198000
+[2026-01-20 17:31:11,382][INFO] no token updates, total=9
+[2026-01-20 17:32:11,676][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948198000
+[2026-01-20 17:32:11,988][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:32:12,226][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948198000
+[2026-01-20 17:32:12,226][INFO] no token updates, total=9
+[2026-01-20 17:33:12,531][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=0 since_ms=1768948198000
+[2026-01-20 17:33:12,845][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:33:13,249][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=0 since_ms=1768948198000
+[2026-01-20 17:33:13,249][INFO] no token updates, total=9
+[2026-01-20 17:34:13,552][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=0 since_ms=1768948198000
+[2026-01-20 17:34:13,843][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:34:14,265][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=0 since_ms=1768948198000
+[2026-01-20 17:34:14,266][INFO] no token updates, total=9
+[2026-01-20 17:35:14,635][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=3 normalized=0 since_ms=1768948198000
+[2026-01-20 17:35:14,942][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:35:15,190][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=3 normalized=0 since_ms=1768948198000
+[2026-01-20 17:35:15,191][INFO] no token updates, total=9
+[2026-01-20 17:36:15,488][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=3 normalized=0 since_ms=1768948198000
+[2026-01-20 17:36:15,777][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:36:16,059][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=3 normalized=0 since_ms=1768948198000
+[2026-01-20 17:36:16,059][INFO] no token updates, total=9
+[2026-01-20 17:37:16,380][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=3 normalized=0 since_ms=1768948198000
+[2026-01-20 17:37:16,684][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:37:16,963][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=3 normalized=0 since_ms=1768948198000
+[2026-01-20 17:37:16,964][INFO] no token updates, total=9
+[2026-01-20 17:38:17,295][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=4 normalized=1 since_ms=1768948198000
+[2026-01-20 17:38:17,629][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:38:17,934][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948672000
+[2026-01-20 17:38:17,934][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=9)
+[2026-01-20 17:39:18,265][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768948672000
+[2026-01-20 17:39:18,545][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:39:18,837][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948736000
+[2026-01-20 17:39:18,838][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=9)
+[2026-01-20 17:40:19,147][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768948736000
+[2026-01-20 17:40:19,433][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:40:19,716][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948800000
+[2026-01-20 17:40:19,716][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=9)
+[2026-01-20 17:41:20,050][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768948800000
+[2026-01-20 17:41:20,381][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:41:20,700][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948814000
+[2026-01-20 17:41:20,701][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=10)
+[2026-01-20 17:42:20,987][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948814000
+[2026-01-20 17:42:21,311][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:42:21,631][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948814000
+[2026-01-20 17:42:21,631][INFO] no token updates, total=10
+[2026-01-20 17:43:21,961][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768948814000
+[2026-01-20 17:43:22,239][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:43:22,551][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948940000
+[2026-01-20 17:43:22,552][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=10)
+[2026-01-20 17:44:22,843][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948940000
+[2026-01-20 17:44:23,139][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:44:23,428][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948940000
+[2026-01-20 17:44:23,429][INFO] no token updates, total=10
+[2026-01-20 17:45:23,727][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948940000
+[2026-01-20 17:45:24,034][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:45:24,323][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948940000
+[2026-01-20 17:45:24,323][INFO] no token updates, total=10
+[2026-01-20 17:46:24,654][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948940000
+[2026-01-20 17:46:24,956][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:46:25,308][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768948940000
+[2026-01-20 17:46:25,308][INFO] no token updates, total=10
+[2026-01-20 17:47:25,620][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768948940000
+[2026-01-20 17:47:25,906][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:47:26,181][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768949192000
+[2026-01-20 17:47:26,182][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=10)
+[2026-01-20 17:48:26,514][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768949192000
+[2026-01-20 17:48:26,804][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:48:27,090][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768949302000
+[2026-01-20 17:48:27,090][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=10)
+[2026-01-20 17:49:27,414][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768949302000
+[2026-01-20 17:49:27,711][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:49:27,985][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768949302000
+[2026-01-20 17:49:27,985][INFO] no token updates, total=10
+[2026-01-20 17:50:28,301][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=2 normalized=1 since_ms=1768949302000
+[2026-01-20 17:50:28,586][INFO] account=0x9ca119b8cd7bdb890aecf1ff3b0f6e3a45cc13b5 trades=1 normalized=0 since_ms=1768947868000
+[2026-01-20 17:50:28,911][INFO] account=0x96489abcb9f583d6835c8ef95ffc923d05a86825 trades=1 normalized=0 since_ms=1768949378000
+[2026-01-20 17:50:28,912][INFO] tokens output updated: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/copytrade/tokens_from_copytrade.json (total=10)
