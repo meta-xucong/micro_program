@@ -1,0 +1,1078 @@
+[CONFIG] 使用配置文件: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/POLYMARKET_MAKER_AUTO/data/run_params_13294549611854156060952327202052855585194847446707854951585060180328600525494.json
+[INIT] API 凭证已验证。
+[INIT] ClobClient 就绪。
+[INFO] 未提供 market_url，尝试通过 token_id 获取市场元数据。
+[INFO] 市场/子问题标题: US strikes Iran by January 31, 2026?
+[INFO] 使用 token_id: 13294549611854156060952327202052855585194847446707854951585060180328600525494
+[INFO] 市场标注时区: America/New_York
+[INFO] 市场计划截止时间 (UTC): 2026-01-31T00:00:00+00:00
+[WARN] 自动获取的截止日期缺少具体时刻，已按默认配置设置截止时间为 2026-01-31T23:59:00-05:00 (America/New_York)。
+[INFO] 监控目标结束时间 (UTC): 2026-02-01T04:59:00+00:00
+[INFO] 未能识别市场价格精度，默认按盈利百分比下限 0.300% 执行。
+[INIT] 目标 token_id: 13294549611854156060952327202052855585194847446707854951585060180328600525494
+[INIT] 已读取手动份数 10.0，模式：总持仓目标。
+[INIT] 卖出挂单模式：aggressive
+[INIT] 卖出后递增买入阈值已启用，步长 0.0200%。
+[INIT] 价格停滞监控窗口 120.0 分钟，阈值 0.2000%。
+[INIT] 启动后无行情自动退出阈值 10.0 分钟。
+[INIT] 卖出挂单空窗释放阈值 6.0 小时。
+[INFO] 倒计时卖出模式将在市场结束前 300 分钟开启。
+[WS][SHARED] ✓ 将使用共享 WS 缓存模式
+[WS][SHARED] 缓存路径: /home/trader/polymarket_api/POLYMARKET_MAKER_copytrade_v2/POLYMARKET_MAKER_AUTO/data/ws_cache.json
+[WS][SHARED] ✓ 缓存文件新鲜（2秒前更新）
+[RUN] 监听行情中… 输入 stop / exit 可手动停止。
+[WS][SHARED] ✗ 缓存中未找到 token 13294549611854156060952327202052855585194847446707854951585060180328600525494 的数据
+[WS][SHARED] 缓存中的 tokens: []...
+[WAIT][SHARED] 尚未收到行情，继续等待… | ws=init age=5s
+[INFO] 共享WS缓存文件已就绪
+[WS][SHARED][DEBUG] 读取统计: read=1, skip=0, 当前seq=1 (last=0), updated_at=1768956126.85 (last=0.00)
+[WS][SHARED] 开始从共享缓存读取数据 (token=13294549611854156060952327202052855585194847446707854951585060180328600525494)
+[WS][SHARED] seq=1, updates=1 (2.0/min), bid=0.78, ask=0.79, price=0.79
+[PX] bid=0.7800 ask=0.7900 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 1
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7850 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=3, skip=1, 当前seq=1 (last=1), updated_at=1768956126.85 (last=1768956126.85)
+[WS][SHARED][DEBUG] 读取统计: read=13, skip=7, 当前seq=8 (last=8), updated_at=1768956147.06 (last=1768956147.06)
+[WS][SHARED][DEBUG] 读取统计: read=23, skip=17, 当前seq=8 (last=8), updated_at=1768956147.06 (last=1768956147.06)
+[WS][SHARED] seq=12, updates=5 (7.8/min), bid=0.78, ask=0.79, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=33, skip=25, 当前seq=20 (last=20), updated_at=1768956165.96 (last=1768956165.96)
+[WS][SHARED][DEBUG] 读取统计: read=43, skip=33, 当前seq=30 (last=28), updated_at=1768956177.18 (last=1768956176.51)
+[PX] bid=0.7800 ask=0.7900 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 10
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7850 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=53, skip=42, 当前seq=30 (last=30), updated_at=1768956177.18 (last=1768956177.18)
+[WS][SHARED] seq=33, updates=5 (7.5/min), bid=0.78, ask=0.79, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=63, skip=50, 当前seq=57 (last=45), updated_at=1768956207.96 (last=1768956205.68)
+[WS][SHARED][DEBUG] 读取统计: read=73, skip=54, 当前seq=90 (last=90), updated_at=1768956215.32 (last=1768956215.32)
+[WS][SHARED][DEBUG] 读取统计: read=83, skip=63, 当前seq=93 (last=93), updated_at=1768956218.24 (last=1768956218.24)
+[WS][SHARED][DEBUG] 读取统计: read=93, skip=73, 当前seq=93 (last=93), updated_at=1768956218.24 (last=1768956218.24)
+[WS][SHARED] seq=96, updates=9 (14.6/min), bid=0.78, ask=0.79, price=0.79
+[PX] bid=0.7800 ask=0.7900 last=0.8300 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 21
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7850 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=103, skip=81, 当前seq=102 (last=99), updated_at=1768956255.37 (last=1768956246.09)
+[WS][SHARED][DEBUG] 读取统计: read=113, skip=90, 当前seq=102 (last=102), updated_at=1768956255.37 (last=1768956255.37)
+[WS][SHARED][DEBUG] 读取统计: read=123, skip=100, 当前seq=102 (last=102), updated_at=1768956255.37 (last=1768956255.37)
+[WS][SHARED][DEBUG] 读取统计: read=133, skip=110, 当前seq=102 (last=102), updated_at=1768956255.37 (last=1768956255.37)
+[WS][SHARED][DEBUG] 读取统计: read=143, skip=120, 当前seq=102 (last=102), updated_at=1768956255.37 (last=1768956255.37)
+[PX] bid=0.7800 ask=0.7900 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 22
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7850 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=153, skip=130, 当前seq=132 (last=102), updated_at=1768956312.75 (last=1768956255.37)
+[WS][SHARED] seq=132, updates=3 (2.4/min), bid=0.78, ask=0.79, price=0.77
+[WS][SHARED][DEBUG] 读取统计: read=163, skip=137, 当前seq=150 (last=150), updated_at=1768956325.63 (last=1768956325.63)
+[WS][SHARED][DEBUG] 读取统计: read=173, skip=146, 当前seq=156 (last=153), updated_at=1768956337.29 (last=1768956336.92)
+[WS][SHARED][DEBUG] 读取统计: read=183, skip=155, 当前seq=156 (last=156), updated_at=1768956337.29 (last=1768956337.29)
+[WS][SHARED] seq=159, updates=5 (9.4/min), bid=0.78, ask=0.79, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=193, skip=164, 当前seq=159 (last=159), updated_at=1768956350.22 (last=1768956350.22)
+[WS][SHARED][DEBUG] 读取统计: read=203, skip=172, 当前seq=165 (last=165), updated_at=1768956359.97 (last=1768956359.97)
+[PX] bid=0.7800 ask=0.7900 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 30
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7850 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=204, skip=173, 当前seq=165 (last=165), updated_at=1768956359.97 (last=1768956359.97)
+[WS][SHARED][DEBUG] 读取统计: read=214, skip=183, 当前seq=165 (last=165), updated_at=1768956359.97 (last=1768956359.97)
+[WS][SHARED][DEBUG] 读取统计: read=224, skip=193, 当前seq=165 (last=165), updated_at=1768956359.97 (last=1768956359.97)
+[WS][SHARED] seq=168, updates=3 (3.5/min), bid=0.78, ask=0.79, price=0.91
+[WS][SHARED][DEBUG] 读取统计: read=234, skip=200, 当前seq=180 (last=180), updated_at=1768956404.22 (last=1768956404.22)
+[WS][SHARED][DEBUG] 读取统计: read=244, skip=208, 当前seq=186 (last=186), updated_at=1768956415.52 (last=1768956415.52)
+[PX] bid=0.7800 ask=0.7900 last=0.7600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 37
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7850 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=254, skip=216, 当前seq=204 (last=192), updated_at=1768956437.79 (last=1768956423.52)
+[WS][SHARED] seq=204, updates=7 (11.3/min), bid=0.78, ask=0.79, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=264, skip=218, 当前seq=393 (last=385), updated_at=1768956449.27 (last=1768956448.31)
+[WS][SHARED][DEBUG] 读取统计: read=274, skip=220, 当前seq=459 (last=453), updated_at=1768956458.93 (last=1768956457.47)
+[WS][SHARED][DEBUG] 读取统计: read=284, skip=225, 当前seq=489 (last=483), updated_at=1768956469.32 (last=1768956467.73)
+[WS][SHARED] seq=489, updates=21 (42.0/min), bid=0.79, ask=0.8, price=0.77
+[WS][SHARED][DEBUG] 读取统计: read=294, skip=230, 当前seq=502 (last=498), updated_at=1768956479.36 (last=1768956476.33)
+[PX] bid=0.7900 ask=0.8000 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 69
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=304, skip=234, 当前seq=513 (last=513), updated_at=1768956485.40 (last=1768956485.40)
+[WS][SHARED] seq=522, updates=11 (20.6/min), bid=0.79, ask=0.8, price=0.77
+[WS][SHARED][DEBUG] 读取统计: read=314, skip=242, 当前seq=528 (last=528), updated_at=1768956506.90 (last=1768956506.90)
+[WS][SHARED][DEBUG] 读取统计: read=324, skip=252, 当前seq=528 (last=528), updated_at=1768956506.90 (last=1768956506.90)
+[WS][SHARED][DEBUG] 读取统计: read=334, skip=261, 当前seq=534 (last=534), updated_at=1768956525.25 (last=1768956525.25)
+[WS][SHARED][DEBUG] 读取统计: read=344, skip=270, 当前seq=537 (last=537), updated_at=1768956529.70 (last=1768956529.70)
+[WS][SHARED] seq=546, updates=4 (5.3/min), bid=0.79, ask=0.8, price=0.77
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 74
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=354, skip=279, 当前seq=558 (last=546), updated_at=1768956559.05 (last=1768956545.70)
+[WS][SHARED][DEBUG] 读取统计: read=364, skip=288, 当前seq=558 (last=558), updated_at=1768956559.05 (last=1768956559.05)
+[WS][SHARED] seq=561, updates=2 (4.0/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=374, skip=297, 当前seq=561 (last=561), updated_at=1768956575.89 (last=1768956575.89)
+[WS][SHARED][DEBUG] 读取统计: read=384, skip=306, 当前seq=564 (last=564), updated_at=1768956586.77 (last=1768956586.77)
+[WS][SHARED][DEBUG] 读取统计: read=394, skip=314, 当前seq=576 (last=573), updated_at=1768956598.61 (last=1768956597.75)
+[WS][SHARED] seq=599, updates=7 (13.5/min), bid=0.79, ask=0.8, price=0.76
+[PX] bid=0.7900 ask=0.8000 last=0.7600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 84
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=404, skip=319, 当前seq=627 (last=606), updated_at=1768956616.22 (last=1768956607.58)
+[WS][SHARED][DEBUG] 读取统计: read=414, skip=326, 当前seq=633 (last=633), updated_at=1768956627.33 (last=1768956627.33)
+[WS][SHARED][DEBUG] 读取统计: read=424, skip=336, 当前seq=633 (last=633), updated_at=1768956627.33 (last=1768956627.33)
+[WS][SHARED][DEBUG] 读取统计: read=434, skip=346, 当前seq=633 (last=633), updated_at=1768956627.33 (last=1768956627.33)
+[WS][SHARED] seq=660, updates=5 (7.0/min), bid=0.79, ask=0.8, price=0.76
+[WS][SHARED][DEBUG] 读取统计: read=444, skip=355, 当前seq=660 (last=660), updated_at=1768956650.09 (last=1768956650.09)
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 92
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=454, skip=361, 当前seq=675 (last=672), updated_at=1768956679.45 (last=1768956666.61)
+[WS][SHARED] seq=681, updates=6 (11.9/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=464, skip=369, 当前seq=681 (last=681), updated_at=1768956679.87 (last=1768956679.87)
+[WS][SHARED][DEBUG] 读取统计: read=474, skip=379, 当前seq=681 (last=681), updated_at=1768956679.87 (last=1768956679.87)
+[WS][SHARED][DEBUG] 读取统计: read=484, skip=388, 当前seq=684 (last=684), updated_at=1768956704.65 (last=1768956704.65)
+[WS][SHARED][DEBUG] 读取统计: read=494, skip=398, 当前seq=684 (last=684), updated_at=1768956704.65 (last=1768956704.65)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 95
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=504, skip=408, 当前seq=684 (last=684), updated_at=1768956704.65 (last=1768956704.65)
+[WS][SHARED][DEBUG] 读取统计: read=514, skip=418, 当前seq=684 (last=684), updated_at=1768956704.65 (last=1768956704.65)
+[WS][SHARED][DEBUG] 读取统计: read=524, skip=428, 当前seq=684 (last=684), updated_at=1768956704.65 (last=1768956704.65)
+[WS][SHARED] seq=686, updates=2 (1.5/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=534, skip=437, 当前seq=686 (last=686), updated_at=1768956760.90 (last=1768956760.90)
+[WS][SHARED][DEBUG] 读取统计: read=544, skip=447, 当前seq=686 (last=686), updated_at=1768956760.90 (last=1768956760.90)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 96
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=554, skip=457, 当前seq=687 (last=686), updated_at=1768956791.15 (last=1768956760.90)
+[WS][SHARED] seq=687, updates=1 (1.6/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=564, skip=466, 当前seq=687 (last=687), updated_at=1768956791.15 (last=1768956791.15)
+[WS][SHARED][DEBUG] 读取统计: read=574, skip=475, 当前seq=688 (last=688), updated_at=1768956812.66 (last=1768956812.66)
+[WS][SHARED][DEBUG] 读取统计: read=584, skip=482, 当前seq=693 (last=693), updated_at=1768956826.42 (last=1768956826.42)
+[WS][SHARED] seq=695, updates=5 (8.6/min), bid=0.79, ask=0.8, price=0.77
+[WS][SHARED][DEBUG] 读取统计: read=594, skip=491, 当前seq=695 (last=695), updated_at=1768956834.17 (last=1768956834.17)
+[PX] bid=0.7900 ask=0.8000 last=0.7800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 103
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=604, skip=500, 当前seq=697 (last=696), updated_at=1768956854.02 (last=1768956845.95)
+[WS][SHARED][DEBUG] 读取统计: read=614, skip=509, 当前seq=697 (last=697), updated_at=1768956854.02 (last=1768956854.02)
+[WS][SHARED][DEBUG] 读取统计: read=624, skip=519, 当前seq=697 (last=697), updated_at=1768956854.02 (last=1768956854.02)
+[WS][SHARED][DEBUG] 读取统计: read=634, skip=529, 当前seq=697 (last=697), updated_at=1768956854.02 (last=1768956854.02)
+[WS][SHARED][DEBUG] 读取统计: read=644, skip=539, 当前seq=697 (last=697), updated_at=1768956854.02 (last=1768956854.02)
+[WS][SHARED] seq=698, updates=3 (2.6/min), bid=0.79, ask=0.8, price=0.84
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 106
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=654, skip=547, 当前seq=700 (last=699), updated_at=1768956920.53 (last=1768956908.46)
+[WS][SHARED][DEBUG] 读取统计: read=664, skip=555, 当前seq=702 (last=702), updated_at=1768956927.39 (last=1768956927.39)
+[WS][SHARED][DEBUG] 读取统计: read=674, skip=564, 当前seq=712 (last=712), updated_at=1768956934.23 (last=1768956934.23)
+[WS][SHARED] seq=714, updates=5 (7.8/min), bid=0.79, ask=0.8, price=0.77
+[WS][SHARED][DEBUG] 读取统计: read=684, skip=570, 当前seq=723 (last=723), updated_at=1768956949.25 (last=1768956949.25)
+[WS][SHARED][DEBUG] 读取统计: read=694, skip=577, 当前seq=730 (last=730), updated_at=1768956959.19 (last=1768956959.19)
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 118
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=704, skip=585, 当前seq=733 (last=732), updated_at=1768956975.03 (last=1768956967.34)
+[WS][SHARED] seq=733, updates=9 (14.6/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=714, skip=592, 当前seq=741 (last=741), updated_at=1768956987.39 (last=1768956987.39)
+[WS][SHARED][DEBUG] 读取统计: read=724, skip=601, 当前seq=742 (last=742), updated_at=1768956994.63 (last=1768956994.63)
+[WS][SHARED][DEBUG] 读取统计: read=734, skip=611, 当前seq=742 (last=742), updated_at=1768956994.63 (last=1768956994.63)
+[WS][SHARED][DEBUG] 读取统计: read=744, skip=621, 当前seq=742 (last=742), updated_at=1768956994.63 (last=1768956994.63)
+[WS][SHARED] seq=743, updates=4 (5.3/min), bid=0.79, ask=0.8, price=0.84
+[PX] bid=0.7900 ask=0.8000 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 123
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=754, skip=629, 当前seq=746 (last=744), updated_at=1768957033.90 (last=1768957027.75)
+[WS][SHARED][DEBUG] 读取统计: read=764, skip=638, 当前seq=746 (last=746), updated_at=1768957033.90 (last=1768957033.90)
+[WS][SHARED][DEBUG] 读取统计: read=774, skip=648, 当前seq=746 (last=746), updated_at=1768957033.90 (last=1768957033.90)
+[WS][SHARED][DEBUG] 读取统计: read=784, skip=658, 当前seq=746 (last=746), updated_at=1768957033.90 (last=1768957033.90)
+[WS][SHARED][DEBUG] 读取统计: read=794, skip=668, 当前seq=746 (last=746), updated_at=1768957033.90 (last=1768957033.90)
+[WS][SHARED] seq=747, updates=3 (2.9/min), bid=0.79, ask=0.8, price=0.77
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 116
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=804, skip=677, 当前seq=753 (last=747), updated_at=1768957095.05 (last=1768957087.59)
+[WS][SHARED][DEBUG] 读取统计: read=814, skip=686, 当前seq=753 (last=753), updated_at=1768957095.05 (last=1768957095.05)
+[WS][SHARED][DEBUG] 读取统计: read=824, skip=696, 当前seq=753 (last=753), updated_at=1768957095.05 (last=1768957095.05)
+[WS][SHARED][DEBUG] 读取统计: read=834, skip=706, 当前seq=753 (last=753), updated_at=1768957095.05 (last=1768957095.05)
+[WS][SHARED][DEBUG] 读取统计: read=844, skip=716, 当前seq=753 (last=753), updated_at=1768957095.05 (last=1768957095.05)
+[WS][SHARED] seq=754, updates=2 (2.2/min), bid=0.79, ask=0.8, price=0.8
+[PX] bid=0.7900 ask=0.8000 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 108
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=854, skip=725, 当前seq=754 (last=754), updated_at=1768957142.91 (last=1768957142.91)
+[WS][SHARED][DEBUG] 读取统计: read=864, skip=735, 当前seq=754 (last=754), updated_at=1768957142.91 (last=1768957142.91)
+[WS][SHARED][DEBUG] 读取统计: read=874, skip=745, 当前seq=754 (last=754), updated_at=1768957142.91 (last=1768957142.91)
+[WS][SHARED][DEBUG] 读取统计: read=884, skip=755, 当前seq=754 (last=754), updated_at=1768957142.91 (last=1768957142.91)
+[WS][SHARED] seq=756, updates=1 (1.2/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=894, skip=764, 当前seq=756 (last=756), updated_at=1768957193.86 (last=1768957193.86)
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 107
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=904, skip=774, 当前seq=756 (last=756), updated_at=1768957193.86 (last=1768957193.86)
+[WS][SHARED][DEBUG] 读取统计: read=914, skip=784, 当前seq=756 (last=756), updated_at=1768957193.86 (last=1768957193.86)
+[WS][SHARED][DEBUG] 读取统计: read=924, skip=794, 当前seq=756 (last=756), updated_at=1768957193.86 (last=1768957193.86)
+[WS][SHARED][DEBUG] 读取统计: read=934, skip=804, 当前seq=756 (last=756), updated_at=1768957193.86 (last=1768957193.86)
+[WS][SHARED][DEBUG] 读取统计: read=944, skip=814, 当前seq=756 (last=756), updated_at=1768957193.86 (last=1768957193.86)
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 107
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=954, skip=824, 当前seq=756 (last=756), updated_at=1768957193.86 (last=1768957193.86)
+[WS][SHARED] seq=757, updates=1 (0.6/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=964, skip=833, 当前seq=757 (last=757), updated_at=1768957288.02 (last=1768957288.02)
+[WS][SHARED][DEBUG] 读取统计: read=974, skip=842, 当前seq=761 (last=761), updated_at=1768957294.61 (last=1768957294.61)
+[WS][SHARED][DEBUG] 读取统计: read=984, skip=847, 当前seq=778 (last=776), updated_at=1768957310.56 (last=1768957309.33)
+[WS][SHARED][DEBUG] 读取统计: read=994, skip=853, 当前seq=783 (last=783), updated_at=1768957314.53 (last=1768957314.53)
+[WS][SHARED] seq=784, updates=11 (16.9/min), bid=0.79, ask=0.8, price=0.81
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 104
+    窗口跌幅: 当前 0.00% / 最大 1.26% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7850
+[WS][SHARED][DEBUG] 读取统计: read=1004, skip=862, 当前seq=786 (last=784), updated_at=1768957335.71 (last=1768957326.30)
+[WS][SHARED][DEBUG] 读取统计: read=1014, skip=871, 当前seq=786 (last=786), updated_at=1768957335.71 (last=1768957335.71)
+[WS][SHARED][DEBUG] 读取统计: read=1024, skip=881, 当前seq=786 (last=786), updated_at=1768957335.71 (last=1768957335.71)
+[WS][SHARED][DEBUG] 读取统计: read=1034, skip=891, 当前seq=786 (last=786), updated_at=1768957335.71 (last=1768957335.71)
+[WS][SHARED] seq=789, updates=2 (2.4/min), bid=0.79, ask=0.8, price=0.77
+[WS][SHARED][DEBUG] 读取统计: read=1044, skip=900, 当前seq=789 (last=789), updated_at=1768957376.35 (last=1768957376.35)
+[WS][SHARED][DEBUG] 读取统计: read=1054, skip=908, 当前seq=792 (last=792), updated_at=1768957387.93 (last=1768957387.93)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 76
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1055, skip=909, 当前seq=804 (last=792), updated_at=1768957401.85 (last=1768957387.93)
+[WS][SHARED][DEBUG] 读取统计: read=1065, skip=916, 当前seq=807 (last=807), updated_at=1768957404.61 (last=1768957404.61)
+[WS][SHARED] seq=809, updates=6 (9.4/min), bid=0.79, ask=0.8, price=0.85
+[WS][SHARED][DEBUG] 读取统计: read=1075, skip=922, 当前seq=827 (last=825), updated_at=1768957421.81 (last=1768957420.23)
+[WS][SHARED][DEBUG] 读取统计: read=1085, skip=929, 当前seq=831 (last=831), updated_at=1768957430.19 (last=1768957430.19)
+[WS][SHARED][DEBUG] 读取统计: read=1095, skip=939, 当前seq=831 (last=831), updated_at=1768957430.19 (last=1768957430.19)
+[WS][SHARED] seq=833, updates=8 (14.1/min), bid=0.79, ask=0.8, price=0.78
+[PX] bid=0.7900 ask=0.8000 last=0.7800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 83
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1105, skip=947, 当前seq=834 (last=833), updated_at=1768957451.97 (last=1768957448.93)
+[WS][SHARED][DEBUG] 读取统计: read=1115, skip=956, 当前seq=834 (last=834), updated_at=1768957451.97 (last=1768957451.97)
+[WS][SHARED][DEBUG] 读取统计: read=1125, skip=965, 当前seq=835 (last=835), updated_at=1768957476.23 (last=1768957476.23)
+[WS][SHARED][DEBUG] 读取统计: read=1135, skip=975, 当前seq=836 (last=835), updated_at=1768957492.11 (last=1768957476.23)
+[WS][SHARED] seq=836, updates=3 (4.2/min), bid=0.79, ask=0.8, price=0.78
+[WS][SHARED][DEBUG] 读取统计: read=1145, skip=982, 当前seq=839 (last=839), updated_at=1768957500.65 (last=1768957500.65)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 79
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1155, skip=991, 当前seq=851 (last=842), updated_at=1768957521.63 (last=1768957509.29)
+[WS][SHARED] seq=851, updates=4 (7.9/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=1165, skip=997, 当前seq=862 (last=862), updated_at=1768957529.74 (last=1768957529.74)
+[WS][SHARED][DEBUG] 读取统计: read=1175, skip=1007, 当前seq=862 (last=862), updated_at=1768957529.74 (last=1768957529.74)
+[WS][SHARED][DEBUG] 读取统计: read=1185, skip=1017, 当前seq=862 (last=862), updated_at=1768957529.74 (last=1768957529.74)
+[WS][SHARED] seq=863, updates=4 (7.3/min), bid=0.79, ask=0.8, price=0.97
+[WS][SHARED][DEBUG] 读取统计: read=1195, skip=1026, 当前seq=863 (last=863), updated_at=1768957554.86 (last=1768957554.86)
+[PX] bid=0.7900 ask=0.8000 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 78
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1205, skip=1034, 当前seq=870 (last=865), updated_at=1768957580.24 (last=1768957571.38)
+[WS][SHARED] seq=872, updates=4 (6.6/min), bid=0.79, ask=0.8, price=0.97
+[WS][SHARED][DEBUG] 读取统计: read=1215, skip=1042, 当前seq=872 (last=872), updated_at=1768957591.25 (last=1768957591.25)
+[WS][SHARED][DEBUG] 读取统计: read=1225, skip=1052, 当前seq=872 (last=872), updated_at=1768957591.25 (last=1768957591.25)
+[WS][SHARED][DEBUG] 读取统计: read=1235, skip=1062, 当前seq=872 (last=872), updated_at=1768957591.25 (last=1768957591.25)
+[WS][SHARED][DEBUG] 读取统计: read=1245, skip=1072, 当前seq=872 (last=872), updated_at=1768957591.25 (last=1768957591.25)
+[WS][SHARED] seq=874, updates=1 (1.6/min), bid=0.79, ask=0.8, price=0.8
+[PX] bid=0.7900 ask=0.8000 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 78
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1255, skip=1081, 当前seq=878 (last=874), updated_at=1768957637.23 (last=1768957629.31)
+[WS][SHARED][DEBUG] 读取统计: read=1265, skip=1090, 当前seq=878 (last=878), updated_at=1768957637.23 (last=1768957637.23)
+[WS][SHARED][DEBUG] 读取统计: read=1275, skip=1100, 当前seq=878 (last=878), updated_at=1768957637.23 (last=1768957637.23)
+[WS][SHARED][DEBUG] 读取统计: read=1285, skip=1110, 当前seq=878 (last=878), updated_at=1768957637.23 (last=1768957637.23)
+[WS][SHARED][DEBUG] 读取统计: read=1295, skip=1120, 当前seq=878 (last=878), updated_at=1768957637.23 (last=1768957637.23)
+[PX] bid=0.7900 ask=0.8000 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 79
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1305, skip=1130, 当前seq=878 (last=878), updated_at=1768957637.23 (last=1768957637.23)
+[WS][SHARED][DEBUG] 读取统计: read=1315, skip=1140, 当前seq=878 (last=878), updated_at=1768957637.23 (last=1768957637.23)
+[WS][SHARED] seq=879, updates=2 (1.3/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=1325, skip=1149, 当前seq=879 (last=879), updated_at=1768957719.06 (last=1768957719.06)
+[WS][SHARED][DEBUG] 读取统计: read=1335, skip=1159, 当前seq=879 (last=879), updated_at=1768957719.06 (last=1768957719.06)
+[WS][SHARED][DEBUG] 读取统计: read=1345, skip=1167, 当前seq=881 (last=881), updated_at=1768957735.15 (last=1768957735.15)
+[WS][SHARED] seq=886, updates=3 (5.6/min), bid=0.79, ask=0.8, price=0.74
+[PX] bid=0.7900 ask=0.8000 last=0.7400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 75
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1355, skip=1176, 当前seq=888 (last=886), updated_at=1768957753.04 (last=1768957751.32)
+[WS][SHARED][DEBUG] 读取统计: read=1365, skip=1184, 当前seq=890 (last=889), updated_at=1768957772.59 (last=1768957772.17)
+[WS][SHARED][DEBUG] 读取统计: read=1375, skip=1193, 当前seq=890 (last=890), updated_at=1768957772.59 (last=1768957772.59)
+[WS][SHARED] seq=898, updates=4 (6.6/min), bid=0.79, ask=0.8, price=0.78
+[WS][SHARED][DEBUG] 读取统计: read=1385, skip=1202, 当前seq=898 (last=898), updated_at=1768957787.16 (last=1768957787.16)
+[WS][SHARED][DEBUG] 读取统计: read=1395, skip=1211, 当前seq=900 (last=899), updated_at=1768957803.56 (last=1768957802.27)
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 80
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1405, skip=1220, 当前seq=900 (last=900), updated_at=1768957803.56 (last=1768957803.56)
+[WS][SHARED][DEBUG] 读取统计: read=1415, skip=1230, 当前seq=900 (last=900), updated_at=1768957803.56 (last=1768957803.56)
+[WS][SHARED] seq=901, updates=3 (3.4/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=1425, skip=1239, 当前seq=901 (last=901), updated_at=1768957839.15 (last=1768957839.15)
+[WS][SHARED][DEBUG] 读取统计: read=1435, skip=1248, 当前seq=905 (last=903), updated_at=1768957853.21 (last=1768957851.03)
+[WS][SHARED][DEBUG] 读取统计: read=1445, skip=1256, 当前seq=907 (last=907), updated_at=1768957859.68 (last=1768957859.68)
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 72
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1455, skip=1265, 当前seq=910 (last=908), updated_at=1768957882.96 (last=1768957867.10)
+[WS][SHARED] seq=910, updates=5 (6.8/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=1465, skip=1274, 当前seq=910 (last=910), updated_at=1768957882.96 (last=1768957882.96)
+[WS][SHARED][DEBUG] 读取统计: read=1475, skip=1284, 当前seq=910 (last=910), updated_at=1768957882.96 (last=1768957882.96)
+[WS][SHARED][DEBUG] 读取统计: read=1485, skip=1293, 当前seq=911 (last=911), updated_at=1768957910.40 (last=1768957910.40)
+[WS][SHARED] seq=912, updates=2 (3.9/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=1495, skip=1302, 当前seq=912 (last=912), updated_at=1768957914.38 (last=1768957914.38)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 70
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1505, skip=1312, 当前seq=912 (last=912), updated_at=1768957914.38 (last=1768957914.38)
+[WS][SHARED] seq=913, updates=1 (2.0/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=1515, skip=1319, 当前seq=918 (last=918), updated_at=1768957950.38 (last=1768957950.38)
+[WS][SHARED][DEBUG] 读取统计: read=1525, skip=1328, 当前seq=921 (last=921), updated_at=1768957958.41 (last=1768957958.41)
+[WS][SHARED][DEBUG] 读取统计: read=1535, skip=1336, 当前seq=924 (last=924), updated_at=1768957970.77 (last=1768957970.77)
+[WS][SHARED][DEBUG] 读取统计: read=1545, skip=1346, 当前seq=924 (last=924), updated_at=1768957970.77 (last=1768957970.77)
+[PX] bid=0.7900 ask=0.8000 last=0.7800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 73
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1555, skip=1356, 当前seq=924 (last=924), updated_at=1768957970.77 (last=1768957970.77)
+[WS][SHARED] seq=925, updates=6 (5.6/min), bid=0.79, ask=0.8, price=0.97
+[WS][SHARED][DEBUG] 读取统计: read=1565, skip=1365, 当前seq=925 (last=925), updated_at=1768958008.44 (last=1768958008.44)
+[WS][SHARED][DEBUG] 读取统计: read=1575, skip=1375, 当前seq=925 (last=925), updated_at=1768958008.44 (last=1768958008.44)
+[WS][SHARED][DEBUG] 读取统计: read=1585, skip=1385, 当前seq=925 (last=925), updated_at=1768958008.44 (last=1768958008.44)
+[WS][SHARED] seq=928, updates=1 (1.8/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=1595, skip=1393, 当前seq=930 (last=930), updated_at=1768958042.03 (last=1768958042.03)
+[PX] bid=0.7900 ask=0.8000 last=0.8300 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 74
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1605, skip=1402, 当前seq=932 (last=931), updated_at=1768958055.49 (last=1768958048.34)
+[WS][SHARED] seq=936, updates=4 (8.0/min), bid=0.79, ask=0.8, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=1615, skip=1409, 当前seq=940 (last=940), updated_at=1768958072.01 (last=1768958072.01)
+[WS][SHARED][DEBUG] 读取统计: read=1625, skip=1419, 当前seq=940 (last=940), updated_at=1768958072.01 (last=1768958072.01)
+[WS][SHARED][DEBUG] 读取统计: read=1635, skip=1428, 当前seq=941 (last=941), updated_at=1768958083.95 (last=1768958083.95)
+[WS][SHARED][DEBUG] 读取统计: read=1645, skip=1437, 当前seq=942 (last=942), updated_at=1768958100.12 (last=1768958100.12)
+[WS][SHARED] seq=944, updates=4 (6.9/min), bid=0.79, ask=0.8, price=0.79
+[PX] bid=0.7900 ask=0.8000 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 80
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1655, skip=1445, 当前seq=948 (last=945), updated_at=1768958118.72 (last=1768958112.14)
+[WS][SHARED][DEBUG] 读取统计: read=1665, skip=1453, 当前seq=949 (last=949), updated_at=1768958132.03 (last=1768958132.03)
+[WS][SHARED] seq=950, updates=4 (6.8/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=1675, skip=1461, 当前seq=951 (last=951), updated_at=1768958142.49 (last=1768958142.49)
+[WS][SHARED][DEBUG] 读取统计: read=1685, skip=1470, 当前seq=952 (last=952), updated_at=1768958150.05 (last=1768958150.05)
+[WS][SHARED][DEBUG] 读取统计: read=1695, skip=1480, 当前seq=952 (last=952), updated_at=1768958150.05 (last=1768958150.05)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 87
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1705, skip=1488, 当前seq=962 (last=956), updated_at=1768958179.46 (last=1768958170.11)
+[WS][SHARED] seq=962, updates=5 (7.1/min), bid=0.79, ask=0.8, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=1715, skip=1496, 当前seq=964 (last=964), updated_at=1768958192.13 (last=1768958192.13)
+[WS][SHARED][DEBUG] 读取统计: read=1725, skip=1504, 当前seq=968 (last=968), updated_at=1768958197.50 (last=1768958197.50)
+[WS][SHARED][DEBUG] 读取统计: read=1735, skip=1510, 当前seq=976 (last=976), updated_at=1768958208.61 (last=1768958208.61)
+[WS][SHARED] seq=980, updates=8 (13.3/min), bid=0.79, ask=0.8, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=1745, skip=1519, 当前seq=980 (last=980), updated_at=1768958219.36 (last=1768958219.36)
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 89
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1755, skip=1524, 当前seq=994 (last=991), updated_at=1768958240.32 (last=1768958231.78)
+[WS][SHARED] seq=998, updates=8 (14.5/min), bid=0.79, ask=0.8, price=0.85
+[WS][SHARED][DEBUG] 读取统计: read=1765, skip=1531, 当前seq=998 (last=998), updated_at=1768958252.84 (last=1768958252.84)
+[WS][SHARED][DEBUG] 读取统计: read=1775, skip=1541, 当前seq=998 (last=998), updated_at=1768958252.84 (last=1768958252.84)
+[WS][SHARED][DEBUG] 读取统计: read=1785, skip=1550, 当前seq=999 (last=999), updated_at=1768958270.19 (last=1768958270.19)
+[WS][SHARED][DEBUG] 读取统计: read=1795, skip=1559, 当前seq=1001 (last=1001), updated_at=1768958276.55 (last=1768958276.55)
+[WS][SHARED] seq=1003, updates=3 (4.5/min), bid=0.79, ask=0.8, price=0.83
+[PX] bid=0.7900 ask=0.8000 last=0.8300 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 91
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1805, skip=1568, 当前seq=1007 (last=1003), updated_at=1768958298.31 (last=1768958292.14)
+[WS][SHARED][DEBUG] 读取统计: read=1815, skip=1576, 当前seq=1008 (last=1008), updated_at=1768958305.99 (last=1768958305.99)
+[WS][SHARED][DEBUG] 读取统计: read=1825, skip=1585, 当前seq=1010 (last=1010), updated_at=1768958318.94 (last=1768958318.94)
+[WS][SHARED][DEBUG] 读取统计: read=1835, skip=1595, 当前seq=1010 (last=1010), updated_at=1768958318.94 (last=1768958318.94)
+[WS][SHARED] seq=1011, updates=4 (5.7/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=1845, skip=1604, 当前seq=1011 (last=1011), updated_at=1768958334.66 (last=1768958334.66)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 85
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1855, skip=1614, 当前seq=1014 (last=1011), updated_at=1768958363.87 (last=1768958334.66)
+[WS][SHARED] seq=1015, updates=2 (4.0/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=1865, skip=1619, 当前seq=1018 (last=1018), updated_at=1768958373.29 (last=1768958373.29)
+[WS][SHARED][DEBUG] 读取统计: read=1875, skip=1626, 当前seq=1029 (last=1029), updated_at=1768958384.00 (last=1768958384.00)
+[WS][SHARED][DEBUG] 读取统计: read=1885, skip=1631, 当前seq=1042 (last=1042), updated_at=1768958392.47 (last=1768958392.47)
+[WS][SHARED] seq=1050, updates=12 (19.5/min), bid=0.79, ask=0.8, price=0.85
+[WS][SHARED][DEBUG] 读取统计: read=1895, skip=1639, 当前seq=1052 (last=1051), updated_at=1768958403.79 (last=1768958402.67)
+[PX] bid=0.7900 ask=0.8000 last=0.1900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 94
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1905, skip=1648, 当前seq=1053 (last=1052), updated_at=1768958424.40 (last=1768958403.79)
+[WS][SHARED][DEBUG] 读取统计: read=1915, skip=1657, 当前seq=1053 (last=1053), updated_at=1768958424.40 (last=1768958424.40)
+[WS][SHARED] seq=1054, updates=4 (6.8/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=1925, skip=1666, 当前seq=1054 (last=1054), updated_at=1768958438.13 (last=1768958438.13)
+[WS][SHARED][DEBUG] 读取统计: read=1935, skip=1676, 当前seq=1054 (last=1054), updated_at=1768958438.13 (last=1768958438.13)
+[WS][SHARED][DEBUG] 读取统计: read=1945, skip=1685, 当前seq=1055 (last=1055), updated_at=1768958459.94 (last=1768958459.94)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 91
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=1955, skip=1695, 当前seq=1055 (last=1055), updated_at=1768958459.94 (last=1768958459.94)
+[WS][SHARED] seq=1057, updates=2 (2.4/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=1965, skip=1703, 当前seq=1058 (last=1058), updated_at=1768958490.10 (last=1768958490.10)
+[WS][SHARED][DEBUG] 读取统计: read=1975, skip=1713, 当前seq=1059 (last=1058), updated_at=1768958504.88 (last=1768958490.10)
+[WS][SHARED][DEBUG] 读取统计: read=1985, skip=1719, 当前seq=1062 (last=1062), updated_at=1768958513.91 (last=1768958513.91)
+[WS][SHARED] seq=1064, updates=6 (10.0/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=1995, skip=1728, 当前seq=1064 (last=1064), updated_at=1768958524.18 (last=1768958524.18)
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 95
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2005, skip=1737, 当前seq=1065 (last=1065), updated_at=1768958526.90 (last=1768958526.90)
+[WS][SHARED] seq=1068, updates=3 (6.0/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=2015, skip=1745, 当前seq=1068 (last=1068), updated_at=1768958553.81 (last=1768958553.81)
+[WS][SHARED][DEBUG] 读取统计: read=2025, skip=1755, 当前seq=1068 (last=1068), updated_at=1768958553.81 (last=1768958553.81)
+[WS][SHARED][DEBUG] 读取统计: read=2035, skip=1765, 当前seq=1068 (last=1068), updated_at=1768958553.81 (last=1768958553.81)
+[WS][SHARED][DEBUG] 读取统计: read=2045, skip=1774, 当前seq=1069 (last=1069), updated_at=1768958577.37 (last=1768958577.37)
+[WS][SHARED] seq=1070, updates=2 (3.4/min), bid=0.79, ask=0.8, price=0.83
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 98
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2055, skip=1782, 当前seq=1072 (last=1071), updated_at=1768958604.96 (last=1768958589.48)
+[WS][SHARED][DEBUG] 读取统计: read=2065, skip=1789, 当前seq=1077 (last=1077), updated_at=1768958613.49 (last=1768958613.49)
+[WS][SHARED] seq=1088, updates=5 (9.3/min), bid=0.79, ask=0.8, price=0.97
+[WS][SHARED][DEBUG] 读取统计: read=2075, skip=1796, 当前seq=1093 (last=1091), updated_at=1768958625.22 (last=1768958622.76)
+[WS][SHARED][DEBUG] 读取统计: read=2085, skip=1804, 当前seq=1094 (last=1094), updated_at=1768958628.02 (last=1768958628.02)
+[WS][SHARED][DEBUG] 读取统计: read=2095, skip=1814, 当前seq=1094 (last=1094), updated_at=1768958628.02 (last=1768958628.02)
+[WS][SHARED] seq=1099, updates=6 (11.6/min), bid=0.79, ask=0.8, price=0.79
+[PX] bid=0.7900 ask=0.8000 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 104
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2105, skip=1821, 当前seq=1105 (last=1100), updated_at=1768958664.82 (last=1768958654.19)
+[WS][SHARED][DEBUG] 读取统计: read=2115, skip=1829, 当前seq=1110 (last=1109), updated_at=1768958675.46 (last=1768958673.20)
+[WS][SHARED][DEBUG] 读取统计: read=2125, skip=1838, 当前seq=1110 (last=1110), updated_at=1768958675.46 (last=1768958675.46)
+[WS][SHARED][DEBUG] 读取统计: read=2135, skip=1848, 当前seq=1111 (last=1110), updated_at=1768958695.37 (last=1768958675.46)
+[WS][SHARED] seq=1111, updates=5 (7.0/min), bid=0.79, ask=0.8, price=0.97
+[WS][SHARED][DEBUG] 读取统计: read=2145, skip=1857, 当前seq=1111 (last=1111), updated_at=1768958695.37 (last=1768958695.37)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 104
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2155, skip=1866, 当前seq=1116 (last=1112), updated_at=1768958721.65 (last=1768958712.02)
+[WS][SHARED] seq=1116, updates=2 (4.0/min), bid=0.79, ask=0.8, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=2165, skip=1873, 当前seq=1121 (last=1121), updated_at=1768958733.30 (last=1768958733.30)
+[WS][SHARED][DEBUG] 读取统计: read=2175, skip=1882, 当前seq=1122 (last=1122), updated_at=1768958741.30 (last=1768958741.30)
+[WS][SHARED][DEBUG] 读取统计: read=2185, skip=1892, 当前seq=1122 (last=1122), updated_at=1768958741.30 (last=1768958741.30)
+[WS][SHARED][DEBUG] 读取统计: read=2195, skip=1902, 当前seq=1122 (last=1122), updated_at=1768958741.30 (last=1768958741.30)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 107
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2205, skip=1912, 当前seq=1123 (last=1122), updated_at=1768958777.60 (last=1768958741.30)
+[WS][SHARED] seq=1123, updates=4 (4.0/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2215, skip=1920, 当前seq=1124 (last=1124), updated_at=1768958786.67 (last=1768958786.67)
+[WS][SHARED][DEBUG] 读取统计: read=2225, skip=1927, 当前seq=1129 (last=1129), updated_at=1768958804.54 (last=1768958804.54)
+[WS][SHARED][DEBUG] 读取统计: read=2235, skip=1935, 当前seq=1132 (last=1132), updated_at=1768958810.83 (last=1768958810.83)
+[WS][SHARED][DEBUG] 读取统计: read=2245, skip=1945, 当前seq=1132 (last=1132), updated_at=1768958810.83 (last=1768958810.83)
+[WS][SHARED] seq=1134, updates=7 (8.6/min), bid=0.79, ask=0.8, price=0.83
+[PX] bid=0.7900 ask=0.8000 last=0.8300 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 108
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2255, skip=1954, 当前seq=1141 (last=1134), updated_at=1768958843.64 (last=1768958834.16)
+[WS][SHARED][DEBUG] 读取统计: read=2265, skip=1963, 当前seq=1141 (last=1141), updated_at=1768958843.64 (last=1768958843.64)
+[WS][SHARED][DEBUG] 读取统计: read=2275, skip=1973, 当前seq=1142 (last=1141), updated_at=1768958864.94 (last=1768958843.64)
+[WS][SHARED] seq=1142, updates=2 (3.9/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2285, skip=1982, 当前seq=1142 (last=1142), updated_at=1768958864.94 (last=1768958864.94)
+[WS][SHARED][DEBUG] 读取统计: read=2295, skip=1992, 当前seq=1142 (last=1142), updated_at=1768958864.94 (last=1768958864.94)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 106
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2305, skip=2002, 当前seq=1143 (last=1142), updated_at=1768958901.28 (last=1768958864.94)
+[WS][SHARED] seq=1143, updates=1 (1.5/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2315, skip=2011, 当前seq=1143 (last=1143), updated_at=1768958901.28 (last=1768958901.28)
+[WS][SHARED][DEBUG] 读取统计: read=2325, skip=2020, 当前seq=1144 (last=1144), updated_at=1768958921.73 (last=1768958921.73)
+[WS][SHARED][DEBUG] 读取统计: read=2335, skip=2028, 当前seq=1148 (last=1148), updated_at=1768958930.41 (last=1768958930.41)
+[WS][SHARED] seq=1149, updates=4 (7.1/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2345, skip=2036, 当前seq=1150 (last=1150), updated_at=1768958940.73 (last=1768958940.73)
+[PX] bid=0.7900 ask=0.8000 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 109
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2355, skip=2046, 当前seq=1151 (last=1150), updated_at=1768958965.62 (last=1768958940.73)
+[WS][SHARED][DEBUG] 读取统计: read=2365, skip=2053, 当前seq=1157 (last=1157), updated_at=1768958967.49 (last=1768958967.49)
+[WS][SHARED] seq=1158, updates=5 (7.1/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=2375, skip=2062, 当前seq=1158 (last=1158), updated_at=1768958981.28 (last=1768958981.28)
+[WS][SHARED][DEBUG] 读取统计: read=2385, skip=2068, 当前seq=1163 (last=1163), updated_at=1768958993.65 (last=1768958993.65)
+[WS][SHARED][DEBUG] 读取统计: read=2395, skip=2077, 当前seq=1164 (last=1164), updated_at=1768958999.92 (last=1768958999.92)
+[PX] bid=0.7900 ask=0.8000 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 111
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2405, skip=2087, 当前seq=1173 (last=1164), updated_at=1768959022.10 (last=1768958999.92)
+[WS][SHARED] seq=1173, updates=6 (8.1/min), bid=0.79, ask=0.8, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=2415, skip=2094, 当前seq=1175 (last=1175), updated_at=1768959030.52 (last=1768959030.52)
+[WS][SHARED][DEBUG] 读取统计: read=2425, skip=2103, 当前seq=1177 (last=1177), updated_at=1768959043.15 (last=1768959043.15)
+[WS][SHARED][DEBUG] 读取统计: read=2435, skip=2113, 当前seq=1177 (last=1177), updated_at=1768959043.15 (last=1768959043.15)
+[WS][SHARED] seq=1179, updates=4 (7.7/min), bid=0.79, ask=0.8, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=2445, skip=2120, 当前seq=1182 (last=1182), updated_at=1768959064.57 (last=1768959064.57)
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 110
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2455, skip=2130, 当前seq=1186 (last=1182), updated_at=1768959086.71 (last=1768959064.57)
+[WS][SHARED] seq=1187, updates=4 (6.5/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2465, skip=2138, 当前seq=1187 (last=1187), updated_at=1768959094.09 (last=1768959094.09)
+[WS][SHARED][DEBUG] 读取统计: read=2475, skip=2148, 当前seq=1188 (last=1187), updated_at=1768959106.59 (last=1768959094.09)
+[WS][SHARED][DEBUG] 读取统计: read=2485, skip=2157, 当前seq=1188 (last=1188), updated_at=1768959106.59 (last=1768959106.59)
+[WS][SHARED] seq=1189, updates=2 (4.0/min), bid=0.79, ask=0.8, price=0.97
+[WS][SHARED][DEBUG] 读取统计: read=2495, skip=2165, 当前seq=1190 (last=1190), updated_at=1768959124.92 (last=1768959124.92)
+[PX] bid=0.7900 ask=0.8000 last=0.9600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 103
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2505, skip=2175, 当前seq=1205 (last=1190), updated_at=1768959146.79 (last=1768959124.92)
+[WS][SHARED][DEBUG] 读取统计: read=2515, skip=2179, 当前seq=1217 (last=1217), updated_at=1768959151.22 (last=1768959151.22)
+[WS][SHARED] seq=1219, updates=8 (14.5/min), bid=0.79, ask=0.8, price=0.86
+[WS][SHARED][DEBUG] 读取统计: read=2525, skip=2185, 当前seq=1225 (last=1225), updated_at=1768959164.46 (last=1768959164.46)
+[WS][SHARED][DEBUG] 读取统计: read=2535, skip=2193, 当前seq=1228 (last=1228), updated_at=1768959171.44 (last=1768959171.44)
+[WS][SHARED][DEBUG] 读取统计: read=2545, skip=2202, 当前seq=1229 (last=1229), updated_at=1768959179.64 (last=1768959179.64)
+[WS][SHARED] seq=1233, updates=7 (12.7/min), bid=0.79, ask=0.8, price=0.83
+[PX] bid=0.7900 ask=0.8000 last=0.8600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 109
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2555, skip=2209, 当前seq=1249 (last=1239), updated_at=1768959206.20 (last=1768959195.12)
+[WS][SHARED][DEBUG] 读取统计: read=2565, skip=2215, 当前seq=1253 (last=1253), updated_at=1768959215.92 (last=1768959215.92)
+[WS][SHARED][DEBUG] 读取统计: read=2575, skip=2223, 当前seq=1256 (last=1256), updated_at=1768959219.27 (last=1768959219.27)
+[WS][SHARED] seq=1258, updates=9 (14.2/min), bid=0.79, ask=0.8, price=0.86
+[WS][SHARED][DEBUG] 读取统计: read=2585, skip=2231, 当前seq=1259 (last=1259), updated_at=1768959233.15 (last=1768959233.15)
+[WS][SHARED][DEBUG] 读取统计: read=2595, skip=2240, 当前seq=1265 (last=1265), updated_at=1768959240.91 (last=1768959240.91)
+[PX] bid=0.7900 ask=0.8000 last=0.8600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 117
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2605, skip=2247, 当前seq=1274 (last=1271), updated_at=1768959262.13 (last=1768959251.20)
+[WS][SHARED] seq=1274, updates=6 (9.4/min), bid=0.79, ask=0.8, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=2615, skip=2255, 当前seq=1275 (last=1275), updated_at=1768959275.30 (last=1768959275.30)
+[WS][SHARED][DEBUG] 读取统计: read=2625, skip=2263, 当前seq=1283 (last=1283), updated_at=1768959285.66 (last=1768959285.66)
+[WS][SHARED][DEBUG] 读取统计: read=2635, skip=2272, 当前seq=1285 (last=1285), updated_at=1768959291.05 (last=1768959291.05)
+[WS][SHARED] seq=1288, updates=5 (8.1/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=2645, skip=2280, 当前seq=1289 (last=1289), updated_at=1768959305.00 (last=1768959305.00)
+[PX] bid=0.7900 ask=0.8000 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 109
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2655, skip=2289, 当前seq=1292 (last=1290), updated_at=1768959326.75 (last=1768959309.84)
+[WS][SHARED][DEBUG] 读取统计: read=2665, skip=2297, 当前seq=1294 (last=1294), updated_at=1768959328.82 (last=1768959328.82)
+[WS][SHARED] seq=1295, updates=5 (8.3/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2675, skip=2305, 当前seq=1297 (last=1297), updated_at=1768959343.01 (last=1768959343.01)
+[WS][SHARED][DEBUG] 读取统计: read=2685, skip=2315, 当前seq=1297 (last=1297), updated_at=1768959343.01 (last=1768959343.01)
+[WS][SHARED][DEBUG] 读取统计: read=2695, skip=2325, 当前seq=1299 (last=1297), updated_at=1768959366.93 (last=1768959343.01)
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 111
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2705, skip=2334, 当前seq=1301 (last=1299), updated_at=1768959384.17 (last=1768959366.93)
+[WS][SHARED] seq=1301, updates=3 (3.8/min), bid=0.79, ask=0.8, price=0.84
+[WS][SHARED][DEBUG] 读取统计: read=2715, skip=2343, 当前seq=1301 (last=1301), updated_at=1768959384.17 (last=1768959384.17)
+[WS][SHARED][DEBUG] 读取统计: read=2725, skip=2353, 当前seq=1301 (last=1301), updated_at=1768959384.17 (last=1768959384.17)
+[WS][SHARED][DEBUG] 读取统计: read=2735, skip=2363, 当前seq=1301 (last=1301), updated_at=1768959384.17 (last=1768959384.17)
+[WS][SHARED][DEBUG] 读取统计: read=2745, skip=2373, 当前seq=1301 (last=1301), updated_at=1768959384.17 (last=1768959384.17)
+[WS][SHARED] seq=1302, updates=1 (1.5/min), bid=0.79, ask=0.8, price=0.79
+[PX] bid=0.7900 ask=0.8000 last=0.7800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 108
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2755, skip=2379, 当前seq=1310 (last=1306), updated_at=1768959445.74 (last=1768959433.99)
+[WS][SHARED][DEBUG] 读取统计: read=2765, skip=2388, 当前seq=1310 (last=1310), updated_at=1768959445.74 (last=1768959445.74)
+[WS][SHARED] seq=1311, updates=5 (8.6/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2775, skip=2397, 当前seq=1311 (last=1311), updated_at=1768959462.37 (last=1768959462.37)
+[WS][SHARED][DEBUG] 读取统计: read=2785, skip=2407, 当前seq=1311 (last=1311), updated_at=1768959462.37 (last=1768959462.37)
+[WS][SHARED][DEBUG] 读取统计: read=2795, skip=2417, 当前seq=1311 (last=1311), updated_at=1768959462.37 (last=1768959462.37)
+[WS][SHARED] seq=1312, updates=1 (2.0/min), bid=0.79, ask=0.8, price=0.79
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 106
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2805, skip=2426, 当前seq=1312 (last=1312), updated_at=1768959492.34 (last=1768959492.34)
+[WS][SHARED][DEBUG] 读取统计: read=2815, skip=2436, 当前seq=1312 (last=1312), updated_at=1768959492.34 (last=1768959492.34)
+[WS][SHARED][DEBUG] 读取统计: read=2825, skip=2446, 当前seq=1312 (last=1312), updated_at=1768959492.34 (last=1768959492.34)
+[WS][SHARED] seq=1313, updates=1 (1.7/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2835, skip=2455, 当前seq=1313 (last=1313), updated_at=1768959528.30 (last=1768959528.30)
+[WS][SHARED][DEBUG] 读取统计: read=2845, skip=2465, 当前seq=1313 (last=1313), updated_at=1768959528.30 (last=1768959528.30)
+[PX] bid=0.7900 ask=0.8000 last=0.9600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 99
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2855, skip=2473, 当前seq=1320 (last=1315), updated_at=1768959563.19 (last=1768959554.49)
+[WS][SHARED] seq=1320, updates=3 (4.6/min), bid=0.79, ask=0.8, price=0.84
+[WS][SHARED][DEBUG] 读取统计: read=2865, skip=2482, 当前seq=1320 (last=1320), updated_at=1768959563.19 (last=1768959563.19)
+[WS][SHARED][DEBUG] 读取统计: read=2875, skip=2492, 当前seq=1320 (last=1320), updated_at=1768959563.19 (last=1768959563.19)
+[WS][SHARED][DEBUG] 读取统计: read=2885, skip=2498, 当前seq=1329 (last=1329), updated_at=1768959595.11 (last=1768959595.11)
+[WS][SHARED][DEBUG] 读取统计: read=2895, skip=2508, 当前seq=1329 (last=1329), updated_at=1768959595.11 (last=1768959595.11)
+[PX] bid=0.7900 ask=0.8000 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 100
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2905, skip=2518, 当前seq=1332 (last=1329), updated_at=1768959621.57 (last=1768959595.11)
+[WS][SHARED] seq=1332, updates=5 (5.0/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2915, skip=2527, 当前seq=1333 (last=1332), updated_at=1768959637.24 (last=1768959621.57)
+[WS][SHARED][DEBUG] 读取统计: read=2925, skip=2534, 当前seq=1336 (last=1336), updated_at=1768959645.51 (last=1768959645.51)
+[WS][SHARED][DEBUG] 读取统计: read=2935, skip=2542, 当前seq=1339 (last=1338), updated_at=1768959656.48 (last=1768959649.44)
+[WS][SHARED] seq=1339, updates=6 (12.0/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2945, skip=2547, 当前seq=1344 (last=1344), updated_at=1768959663.98 (last=1768959663.98)
+[PX] bid=0.7900 ask=0.8000 last=0.7800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 105
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=2955, skip=2557, 当前seq=1345 (last=1344), updated_at=1768959681.35 (last=1768959663.98)
+[WS][SHARED] seq=1345, updates=5 (10.0/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=2965, skip=2565, 当前seq=1346 (last=1346), updated_at=1768959693.43 (last=1768959693.43)
+[WS][SHARED][DEBUG] 读取统计: read=2975, skip=2574, 当前seq=1347 (last=1347), updated_at=1768959699.34 (last=1768959699.34)
+[WS][SHARED][DEBUG] 读取统计: read=2985, skip=2583, 当前seq=1348 (last=1348), updated_at=1768959714.20 (last=1768959714.20)
+[WS][SHARED] seq=1350, updates=4 (7.7/min), bid=0.79, ask=0.8, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=2995, skip=2591, 当前seq=1352 (last=1352), updated_at=1768959719.00 (last=1768959719.00)
+[PX] bid=0.7900 ask=0.8000 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 104
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3005, skip=2600, 当前seq=1365 (last=1356), updated_at=1768959745.72 (last=1768959735.82)
+[WS][SHARED] seq=1369, updates=4 (6.4/min), bid=0.79, ask=0.8, price=0.86
+[WS][SHARED][DEBUG] 读取统计: read=3015, skip=2607, 当前seq=1370 (last=1370), updated_at=1768959756.34 (last=1768959756.34)
+[WS][SHARED][DEBUG] 读取统计: read=3025, skip=2614, 当前seq=1374 (last=1374), updated_at=1768959766.24 (last=1768959766.24)
+[WS][SHARED][DEBUG] 读取统计: read=3035, skip=2624, 当前seq=1374 (last=1374), updated_at=1768959766.24 (last=1768959766.24)
+[WS][SHARED] seq=1376, updates=6 (11.6/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=3045, skip=2632, 当前seq=1378 (last=1376), updated_at=1768959787.26 (last=1768959786.07)
+[PX] bid=0.7900 ask=0.8000 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 112
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3055, skip=2640, 当前seq=1383 (last=1379), updated_at=1768959808.19 (last=1768959791.28)
+[WS][SHARED][DEBUG] 读取统计: read=3065, skip=2649, 当前seq=1383 (last=1383), updated_at=1768959808.19 (last=1768959808.19)
+[WS][SHARED] seq=1384, updates=4 (7.2/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=3075, skip=2657, 当前seq=1385 (last=1385), updated_at=1768959825.23 (last=1768959825.23)
+[WS][SHARED][DEBUG] 读取统计: read=3085, skip=2667, 当前seq=1385 (last=1385), updated_at=1768959825.23 (last=1768959825.23)
+[WS][SHARED][DEBUG] 读取统计: read=3095, skip=2676, 当前seq=1386 (last=1386), updated_at=1768959841.68 (last=1768959841.68)
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 111
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3105, skip=2686, 当前seq=1387 (last=1386), updated_at=1768959863.24 (last=1768959841.68)
+[WS][SHARED] seq=1387, updates=3 (3.7/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=3115, skip=2694, 当前seq=1389 (last=1389), updated_at=1768959870.27 (last=1768959870.27)
+[WS][SHARED][DEBUG] 读取统计: read=3125, skip=2702, 当前seq=1393 (last=1393), updated_at=1768959882.44 (last=1768959882.44)
+[WS][SHARED][DEBUG] 读取统计: read=3135, skip=2712, 当前seq=1394 (last=1393), updated_at=1768959898.45 (last=1768959882.44)
+[WS][SHARED] seq=1394, updates=4 (8.0/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=3145, skip=2721, 当前seq=1394 (last=1394), updated_at=1768959898.45 (last=1768959898.45)
+[PX] bid=0.7900 ask=0.8000 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 107
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3155, skip=2730, 当前seq=1396 (last=1395), updated_at=1768959926.66 (last=1768959915.87)
+[WS][SHARED] seq=1396, updates=2 (4.0/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=3165, skip=2739, 当前seq=1396 (last=1396), updated_at=1768959926.66 (last=1768959926.66)
+[WS][SHARED][DEBUG] 读取统计: read=3175, skip=2749, 当前seq=1396 (last=1396), updated_at=1768959926.66 (last=1768959926.66)
+[WS][SHARED][DEBUG] 读取统计: read=3185, skip=2759, 当前seq=1396 (last=1396), updated_at=1768959926.66 (last=1768959926.66)
+[WS][SHARED] seq=1400, updates=1 (1.9/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=3195, skip=2767, 当前seq=1402 (last=1402), updated_at=1768959961.71 (last=1768959961.71)
+[PX] bid=0.7900 ask=0.8000 last=0.7700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 104
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3205, skip=2776, 当前seq=1403 (last=1403), updated_at=1768959970.47 (last=1768959970.47)
+[WS][SHARED] seq=1404, updates=3 (6.0/min), bid=0.79, ask=0.8, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=3215, skip=2784, 当前seq=1405 (last=1405), updated_at=1768959989.95 (last=1768959989.95)
+[WS][SHARED][DEBUG] 读取统计: read=3225, skip=2793, 当前seq=1406 (last=1406), updated_at=1768960003.86 (last=1768960003.86)
+[WS][SHARED][DEBUG] 读取统计: read=3235, skip=2802, 当前seq=1408 (last=1408), updated_at=1768960016.68 (last=1768960016.68)
+[WS][SHARED] seq=1409, updates=4 (6.7/min), bid=0.79, ask=0.8, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=3245, skip=2811, 当前seq=1411 (last=1409), updated_at=1768960028.28 (last=1768960025.20)
+[PX] bid=0.7900 ask=0.8000 last=0.9600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 105
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3255, skip=2820, 当前seq=1411 (last=1411), updated_at=1768960028.28 (last=1768960028.28)
+[WS][SHARED][DEBUG] 读取统计: read=3265, skip=2829, 当前seq=1412 (last=1412), updated_at=1768960053.52 (last=1768960053.52)
+[WS][SHARED][DEBUG] 读取统计: read=3275, skip=2839, 当前seq=1412 (last=1412), updated_at=1768960053.52 (last=1768960053.52)
+[WS][SHARED][DEBUG] 读取统计: read=3285, skip=2849, 当前seq=1412 (last=1412), updated_at=1768960053.52 (last=1768960053.52)
+[WS][SHARED][DEBUG] 读取统计: read=3295, skip=2859, 当前seq=1413 (last=1412), updated_at=1768960088.75 (last=1768960053.52)
+[WS][SHARED] seq=1413, updates=3 (2.9/min), bid=0.79, ask=0.8, price=0.79
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 94
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3305, skip=2868, 当前seq=1416 (last=1413), updated_at=1768960106.15 (last=1768960088.75)
+[WS][SHARED][DEBUG] 读取统计: read=3315, skip=2875, 当前seq=1418 (last=1418), updated_at=1768960116.96 (last=1768960116.96)
+[WS][SHARED] seq=1420, updates=4 (7.5/min), bid=0.79, ask=0.8, price=0.86
+[WS][SHARED][DEBUG] 读取统计: read=3325, skip=2882, 当前seq=1422 (last=1422), updated_at=1768960125.90 (last=1768960125.90)
+[WS][SHARED][DEBUG] 读取统计: read=3335, skip=2890, 当前seq=1426 (last=1426), updated_at=1768960134.35 (last=1768960134.35)
+[WS][SHARED][DEBUG] 读取统计: read=3345, skip=2899, 当前seq=1427 (last=1427), updated_at=1768960146.08 (last=1768960146.08)
+[WS][SHARED] seq=1428, updates=6 (11.2/min), bid=0.79, ask=0.8, price=0.79
+[PX] bid=0.7900 ask=0.8000 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 89
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.7950 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3355, skip=2908, 当前seq=1428 (last=1428), updated_at=1768960152.37 (last=1768960152.37)
+[WS][SHARED][DEBUG] 读取统计: read=3365, skip=2918, 当前seq=1430 (last=1428), updated_at=1768960178.85 (last=1768960152.37)
+[WS][SHARED][DEBUG] 读取统计: read=3375, skip=2925, 当前seq=1436 (last=1436), updated_at=1768960180.76 (last=1768960180.76)
+[WS][SHARED] seq=1437, updates=4 (5.7/min), bid=0.79, ask=0.8, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=3385, skip=2933, 当前seq=1438 (last=1438), updated_at=1768960195.15 (last=1768960195.15)
+[WS][SHARED][DEBUG] 读取统计: read=3395, skip=2938, 当前seq=1444 (last=1444), updated_at=1768960207.93 (last=1768960207.93)
+[PX] bid=0.8000 ask=0.8100 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 98
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3405, skip=2941, 当前seq=1581 (last=1517), updated_at=1768960228.62 (last=1768960217.88)
+[WS][SHARED] seq=1581, updates=14 (24.6/min), bid=0.8, ask=0.81, price=0.78
+[WS][SHARED][DEBUG] 读取统计: read=3415, skip=2947, 当前seq=1594 (last=1586), updated_at=1768960238.98 (last=1768960234.80)
+[WS][SHARED][DEBUG] 读取统计: read=3425, skip=2949, 当前seq=1611 (last=1611), updated_at=1768960245.20 (last=1768960245.20)
+[WS][SHARED][DEBUG] 读取统计: read=3435, skip=2958, 当前seq=1613 (last=1613), updated_at=1768960257.01 (last=1768960257.01)
+[WS][SHARED] seq=1614, updates=13 (22.9/min), bid=0.8, ask=0.81, price=0.84
+[WS][SHARED][DEBUG] 读取统计: read=3445, skip=2962, 当前seq=1626 (last=1625), updated_at=1768960268.06 (last=1768960267.54)
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 116
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3455, skip=2968, 当前seq=1656 (last=1636), updated_at=1768960288.15 (last=1768960276.98)
+[WS][SHARED] seq=1664, updates=12 (23.9/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=3465, skip=2975, 当前seq=1670 (last=1664), updated_at=1768960298.88 (last=1768960293.00)
+[WS][SHARED][DEBUG] 读取统计: read=3475, skip=2980, 当前seq=1679 (last=1679), updated_at=1768960306.32 (last=1768960306.32)
+[WS][SHARED][DEBUG] 读取统计: read=3485, skip=2988, 当前seq=1687 (last=1685), updated_at=1768960318.50 (last=1768960313.07)
+[WS][SHARED] seq=1694, updates=11 (21.3/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=3495, skip=2991, 当前seq=1702 (last=1702), updated_at=1768960328.01 (last=1768960328.01)
+[PX] bid=0.8000 ask=0.8100 last=0.8300 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 133
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3505, skip=2996, 当前seq=1723 (last=1712), updated_at=1768960347.39 (last=1768960338.05)
+[WS][SHARED] seq=1736, updates=13 (25.8/min), bid=0.8, ask=0.81, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=3515, skip=2998, 当前seq=1745 (last=1742), updated_at=1768960358.53 (last=1768960357.91)
+[WS][SHARED][DEBUG] 读取统计: read=3525, skip=3004, 当前seq=1754 (last=1751), updated_at=1768960368.58 (last=1768960367.81)
+[WS][SHARED][DEBUG] 读取统计: read=3535, skip=3009, 当前seq=1767 (last=1762), updated_at=1768960378.91 (last=1768960377.68)
+[WS][SHARED] seq=1773, updates=16 (31.0/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=3545, skip=3014, 当前seq=1779 (last=1777), updated_at=1768960388.87 (last=1768960387.90)
+[PX] bid=0.8000 ask=0.8100 last=0.8300 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 157
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3555, skip=3019, 当前seq=1793 (last=1787), updated_at=1768960407.28 (last=1768960396.37)
+[WS][SHARED] seq=1803, updates=11 (20.5/min), bid=0.8, ask=0.81, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=3565, skip=3024, 当前seq=1803 (last=1803), updated_at=1768960417.19 (last=1768960417.19)
+[WS][SHARED][DEBUG] 读取统计: read=3575, skip=3032, 当前seq=1806 (last=1806), updated_at=1768960423.25 (last=1768960423.25)
+[WS][SHARED][DEBUG] 读取统计: read=3585, skip=3042, 当前seq=1806 (last=1806), updated_at=1768960423.25 (last=1768960423.25)
+[WS][SHARED][DEBUG] 读取统计: read=3595, skip=3050, 当前seq=1808 (last=1808), updated_at=1768960443.04 (last=1768960443.04)
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 165
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3605, skip=3060, 当前seq=1808 (last=1808), updated_at=1768960443.04 (last=1768960443.04)
+[WS][SHARED] seq=1809, updates=5 (5.3/min), bid=0.8, ask=0.81, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=3615, skip=3069, 当前seq=1809 (last=1809), updated_at=1768960473.73 (last=1768960473.73)
+[WS][SHARED][DEBUG] 读取统计: read=3625, skip=3079, 当前seq=1809 (last=1809), updated_at=1768960473.73 (last=1768960473.73)
+[WS][SHARED][DEBUG] 读取统计: read=3635, skip=3086, 当前seq=1817 (last=1814), updated_at=1768960498.90 (last=1768960496.68)
+[WS][SHARED] seq=1822, updates=6 (12.0/min), bid=0.8, ask=0.81, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=3645, skip=3092, 当前seq=1823 (last=1823), updated_at=1768960505.57 (last=1768960505.57)
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 168
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3655, skip=3100, 当前seq=1827 (last=1827), updated_at=1768960513.49 (last=1768960513.49)
+[WS][SHARED] seq=1829, updates=5 (9.9/min), bid=0.8, ask=0.81, price=0.88
+[WS][SHARED][DEBUG] 读取统计: read=3665, skip=3108, 当前seq=1829 (last=1829), updated_at=1768960533.75 (last=1768960533.75)
+[WS][SHARED][DEBUG] 读取统计: read=3675, skip=3117, 当前seq=1831 (last=1830), updated_at=1768960549.20 (last=1768960540.44)
+[WS][SHARED][DEBUG] 读取统计: read=3685, skip=3126, 当前seq=1831 (last=1831), updated_at=1768960549.20 (last=1768960549.20)
+[WS][SHARED] seq=1833, updates=4 (7.7/min), bid=0.8, ask=0.81, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=3695, skip=3133, 当前seq=1834 (last=1834), updated_at=1768960567.92 (last=1768960567.92)
+[PX] bid=0.8000 ask=0.8100 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 166
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3705, skip=3141, 当前seq=1837 (last=1836), updated_at=1768960581.04 (last=1768960574.59)
+[WS][SHARED][DEBUG] 读取统计: read=3715, skip=3150, 当前seq=1837 (last=1837), updated_at=1768960581.04 (last=1768960581.04)
+[WS][SHARED] seq=1840, updates=5 (8.1/min), bid=0.8, ask=0.81, price=0.83
+[WS][SHARED][DEBUG] 读取统计: read=3725, skip=3159, 当前seq=1840 (last=1840), updated_at=1768960603.08 (last=1768960603.08)
+[WS][SHARED][DEBUG] 读取统计: read=3735, skip=3168, 当前seq=1845 (last=1845), updated_at=1768960619.04 (last=1768960619.04)
+[WS][SHARED][DEBUG] 读取统计: read=3745, skip=3178, 当前seq=1845 (last=1845), updated_at=1768960619.04 (last=1768960619.04)
+[WS][SHARED] seq=1848, updates=2 (3.4/min), bid=0.8, ask=0.81, price=0.83
+[PX] bid=0.8000 ask=0.8100 last=0.8300 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 163
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3755, skip=3187, 当前seq=1848 (last=1848), updated_at=1768960638.08 (last=1768960638.08)
+[WS][SHARED][DEBUG] 读取统计: read=3765, skip=3195, 当前seq=1851 (last=1851), updated_at=1768960658.91 (last=1768960658.91)
+[WS][SHARED][DEBUG] 读取统计: read=3775, skip=3205, 当前seq=1851 (last=1851), updated_at=1768960658.91 (last=1768960658.91)
+[WS][SHARED] seq=1852, updates=3 (5.4/min), bid=0.8, ask=0.81, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=3785, skip=3211, 当前seq=1857 (last=1857), updated_at=1768960676.43 (last=1768960676.43)
+[WS][SHARED][DEBUG] 读取统计: read=3795, skip=3220, 当前seq=1860 (last=1860), updated_at=1768960685.98 (last=1768960685.98)
+[PX] bid=0.8000 ask=0.8100 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 163
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3805, skip=3227, 当前seq=1864 (last=1864), updated_at=1768960698.42 (last=1768960698.42)
+[WS][SHARED] seq=1866, updates=8 (10.0/min), bid=0.8, ask=0.81, price=0.84
+[WS][SHARED][DEBUG] 读取统计: read=3815, skip=3236, 当前seq=1868 (last=1866), updated_at=1768960720.45 (last=1768960719.16)
+[WS][SHARED][DEBUG] 读取统计: read=3825, skip=3245, 当前seq=1868 (last=1868), updated_at=1768960720.45 (last=1768960720.45)
+[WS][SHARED][DEBUG] 读取统计: read=3835, skip=3255, 当前seq=1868 (last=1868), updated_at=1768960720.45 (last=1768960720.45)
+[WS][SHARED][DEBUG] 读取统计: read=3845, skip=3265, 当前seq=1868 (last=1868), updated_at=1768960720.45 (last=1768960720.45)
+[WS][SHARED] seq=1872, updates=2 (3.1/min), bid=0.8, ask=0.81, price=0.89
+[PX] bid=0.8000 ask=0.8100 last=0.8900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 162
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3855, skip=3274, 当前seq=1877 (last=1872), updated_at=1768960768.15 (last=1768960758.15)
+[WS][SHARED][DEBUG] 读取统计: read=3865, skip=3281, 当前seq=1890 (last=1884), updated_at=1768960780.37 (last=1768960777.30)
+[WS][SHARED][DEBUG] 读取统计: read=3875, skip=3289, 当前seq=1891 (last=1891), updated_at=1768960785.93 (last=1768960785.93)
+[WS][SHARED][DEBUG] 读取统计: read=3885, skip=3299, 当前seq=1891 (last=1891), updated_at=1768960785.93 (last=1768960785.93)
+[WS][SHARED] seq=1893, updates=6 (7.8/min), bid=0.8, ask=0.81, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=3895, skip=3305, 当前seq=1899 (last=1899), updated_at=1768960808.44 (last=1768960808.44)
+[PX] bid=0.8000 ask=0.8100 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 167
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3905, skip=3314, 当前seq=1901 (last=1900), updated_at=1768960829.20 (last=1768960813.08)
+[WS][SHARED][DEBUG] 读取统计: read=3915, skip=3322, 当前seq=1902 (last=1902), updated_at=1768960832.29 (last=1768960832.29)
+[WS][SHARED][DEBUG] 读取统计: read=3925, skip=3332, 当前seq=1902 (last=1902), updated_at=1768960832.29 (last=1768960832.29)
+[WS][SHARED][DEBUG] 读取统计: read=3935, skip=3342, 当前seq=1902 (last=1902), updated_at=1768960832.29 (last=1768960832.29)
+[WS][SHARED][DEBUG] 读取统计: read=3945, skip=3352, 当前seq=1902 (last=1902), updated_at=1768960832.29 (last=1768960832.29)
+[PX] bid=0.8000 ask=0.8100 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 167
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=3955, skip=3362, 当前seq=1902 (last=1902), updated_at=1768960832.29 (last=1768960832.29)
+[WS][SHARED][DEBUG] 读取统计: read=3965, skip=3372, 当前seq=1902 (last=1902), updated_at=1768960832.29 (last=1768960832.29)
+[WS][SHARED] seq=1905, updates=7 (4.3/min), bid=0.8, ask=0.81, price=0.78
+[WS][SHARED][DEBUG] 读取统计: read=3975, skip=3380, 当前seq=1907 (last=1907), updated_at=1768960909.59 (last=1768960909.59)
+[WS][SHARED][DEBUG] 读取统计: read=3985, skip=3390, 当前seq=1907 (last=1907), updated_at=1768960909.59 (last=1768960909.59)
+[WS][SHARED][DEBUG] 读取统计: read=3995, skip=3398, 当前seq=1911 (last=1911), updated_at=1768960926.00 (last=1768960926.00)
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 163
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=4005, skip=3408, 当前seq=1912 (last=1911), updated_at=1768960944.52 (last=1768960926.00)
+[WS][SHARED] seq=1912, updates=4 (5.0/min), bid=0.8, ask=0.81, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=4015, skip=3415, 当前seq=1918 (last=1916), updated_at=1768960960.12 (last=1768960957.53)
+[WS][SHARED][DEBUG] 读取统计: read=4025, skip=3422, 当前seq=1922 (last=1922), updated_at=1768960967.80 (last=1768960967.80)
+[WS][SHARED][DEBUG] 读取统计: read=4035, skip=3431, 当前seq=1924 (last=1924), updated_at=1768960975.62 (last=1768960975.62)
+[WS][SHARED] seq=1926, updates=7 (13.1/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=4045, skip=3439, 当前seq=1928 (last=1928), updated_at=1768960983.04 (last=1768960983.04)
+[PX] bid=0.8000 ask=0.8100 last=0.7800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 171
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=4055, skip=3447, 当前seq=1932 (last=1930), updated_at=1768961004.48 (last=1768960995.19)
+[WS][SHARED][DEBUG] 读取统计: read=4065, skip=3456, 当前seq=1932 (last=1932), updated_at=1768961004.48 (last=1768961004.48)
+[WS][SHARED] seq=1934, updates=5 (6.4/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=4075, skip=3465, 当前seq=1934 (last=1934), updated_at=1768961029.32 (last=1768961029.32)
+[WS][SHARED][DEBUG] 读取统计: read=4085, skip=3471, 当前seq=1939 (last=1939), updated_at=1768961037.95 (last=1768961037.95)
+[WS][SHARED][DEBUG] 读取统计: read=4095, skip=3480, 当前seq=1943 (last=1941), updated_at=1768961050.05 (last=1768961049.02)
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 173
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=4105, skip=3485, 当前seq=1958 (last=1957), updated_at=1768961064.24 (last=1768961057.42)
+[WS][SHARED] seq=1958, updates=11 (16.0/min), bid=0.8, ask=0.81, price=0.8
+[WS][SHARED][DEBUG] 读取统计: read=4115, skip=3493, 当前seq=1960 (last=1960), updated_at=1768961075.89 (last=1768961075.89)
+[WS][SHARED][DEBUG] 读取统计: read=4125, skip=3503, 当前seq=1960 (last=1960), updated_at=1768961075.89 (last=1768961075.89)
+[WS][SHARED][DEBUG] 读取统计: read=4135, skip=3511, 当前seq=1966 (last=1963), updated_at=1768961100.87 (last=1768961094.35)
+[WS][SHARED] seq=1966, updates=4 (8.0/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=4145, skip=3516, 当前seq=1971 (last=1971), updated_at=1768961108.74 (last=1768961108.74)
+[PX] bid=0.8000 ask=0.8100 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 172
+    窗口跌幅: 当前 0.00% / 最大 1.24% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.7950
+[WS][SHARED][DEBUG] 读取统计: read=4155, skip=3526, 当前seq=1977 (last=1971), updated_at=1768961129.97 (last=1768961108.74)
+[WS][SHARED] seq=1977, updates=5 (10.0/min), bid=0.8, ask=0.81, price=0.78
+[WS][SHARED][DEBUG] 读取统计: read=4165, skip=3533, 当前seq=1983 (last=1983), updated_at=1768961138.75 (last=1768961138.75)
+[WS][SHARED][DEBUG] 读取统计: read=4175, skip=3542, 当前seq=1984 (last=1984), updated_at=1768961146.49 (last=1768961146.49)
+[WS][SHARED][DEBUG] 读取统计: read=4185, skip=3552, 当前seq=1984 (last=1984), updated_at=1768961146.49 (last=1768961146.49)
+[WS][SHARED][DEBUG] 读取统计: read=4195, skip=3562, 当前seq=1984 (last=1984), updated_at=1768961146.49 (last=1768961146.49)
+[WS][SHARED] seq=1985, updates=4 (5.7/min), bid=0.8, ask=0.81, price=0.81
+[PX] bid=0.8000 ask=0.8100 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 148
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4205, skip=3571, 当前seq=1994 (last=1985), updated_at=1768961191.37 (last=1768961173.35)
+[WS][SHARED][DEBUG] 读取统计: read=4215, skip=3579, 当前seq=1997 (last=1997), updated_at=1768961194.73 (last=1768961194.73)
+[WS][SHARED][DEBUG] 读取统计: read=4225, skip=3589, 当前seq=1997 (last=1997), updated_at=1768961194.73 (last=1768961194.73)
+[WS][SHARED] seq=1998, updates=3 (4.3/min), bid=0.8, ask=0.81, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=4235, skip=3596, 当前seq=2000 (last=2000), updated_at=1768961219.47 (last=1768961219.47)
+[WS][SHARED][DEBUG] 读取统计: read=4245, skip=3606, 当前seq=2000 (last=2000), updated_at=1768961219.47 (last=1768961219.47)
+[PX] bid=0.8000 ask=0.8100 last=0.8000 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 132
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4255, skip=3614, 当前seq=2004 (last=2003), updated_at=1768961245.85 (last=1768961241.02)
+[WS][SHARED] seq=2004, updates=5 (8.3/min), bid=0.8, ask=0.81, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=4265, skip=3623, 当前seq=2005 (last=2004), updated_at=1768961261.14 (last=1768961245.85)
+[WS][SHARED][DEBUG] 读取统计: read=4275, skip=3631, 当前seq=2006 (last=2006), updated_at=1768961262.59 (last=1768961262.59)
+[WS][SHARED][DEBUG] 读取统计: read=4285, skip=3641, 当前seq=2006 (last=2006), updated_at=1768961262.59 (last=1768961262.59)
+[WS][SHARED][DEBUG] 读取统计: read=4295, skip=3651, 当前seq=2006 (last=2006), updated_at=1768961262.59 (last=1768961262.59)
+[PX] bid=0.8000 ask=0.8100 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 125
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4305, skip=3661, 当前seq=2008 (last=2006), updated_at=1768961308.33 (last=1768961262.59)
+[WS][SHARED] seq=2008, updates=3 (3.0/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=4315, skip=3670, 当前seq=2012 (last=2008), updated_at=1768961321.17 (last=1768961308.33)
+[WS][SHARED][DEBUG] 读取统计: read=4325, skip=3678, 当前seq=2016 (last=2016), updated_at=1768961322.40 (last=1768961322.40)
+[WS][SHARED][DEBUG] 读取统计: read=4335, skip=3687, 当前seq=2017 (last=2017), updated_at=1768961340.67 (last=1768961340.67)
+[WS][SHARED][DEBUG] 读取统计: read=4345, skip=3697, 当前seq=2017 (last=2017), updated_at=1768961340.67 (last=1768961340.67)
+[PX] bid=0.8000 ask=0.8100 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 105
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4355, skip=3707, 当前seq=2018 (last=2017), updated_at=1768961371.42 (last=1768961340.67)
+[WS][SHARED] seq=2018, updates=4 (4.0/min), bid=0.8, ask=0.81, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=4365, skip=3715, 当前seq=2019 (last=2019), updated_at=1768961373.66 (last=1768961373.66)
+[WS][SHARED][DEBUG] 读取统计: read=4375, skip=3723, 当前seq=2023 (last=2023), updated_at=1768961388.08 (last=1768961388.08)
+[WS][SHARED][DEBUG] 读取统计: read=4385, skip=3732, 当前seq=2025 (last=2025), updated_at=1768961392.67 (last=1768961392.67)
+[WS][SHARED] seq=2027, updates=5 (8.8/min), bid=0.8, ask=0.81, price=0.78
+[WS][SHARED][DEBUG] 读取统计: read=4395, skip=3741, 当前seq=2027 (last=2027), updated_at=1768961405.71 (last=1768961405.71)
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 100
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4405, skip=3750, 当前seq=2033 (last=2029), updated_at=1768961430.82 (last=1768961420.89)
+[WS][SHARED] seq=2035, updates=4 (7.9/min), bid=0.8, ask=0.81, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=4415, skip=3757, 当前seq=2035 (last=2035), updated_at=1768961435.49 (last=1768961435.49)
+[WS][SHARED][DEBUG] 读取统计: read=4425, skip=3767, 当前seq=2035 (last=2035), updated_at=1768961435.49 (last=1768961435.49)
+[WS][SHARED][DEBUG] 读取统计: read=4435, skip=3775, 当前seq=2039 (last=2039), updated_at=1768961458.07 (last=1768961458.07)
+[WS][SHARED] seq=2043, updates=3 (6.0/min), bid=0.8, ask=0.81, price=0.82
+[WS][SHARED][DEBUG] 读取统计: read=4445, skip=3784, 当前seq=2043 (last=2043), updated_at=1768961465.60 (last=1768961465.60)
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 100
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4455, skip=3794, 当前seq=2043 (last=2043), updated_at=1768961465.60 (last=1768961465.60)
+[WS][SHARED][DEBUG] 读取统计: read=4465, skip=3804, 当前seq=2043 (last=2043), updated_at=1768961465.60 (last=1768961465.60)
+[WS][SHARED][DEBUG] 读取统计: read=4475, skip=3814, 当前seq=2043 (last=2043), updated_at=1768961465.60 (last=1768961465.60)
+[WS][SHARED] seq=2052, updates=1 (1.1/min), bid=0.8, ask=0.81, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=4485, skip=3822, 当前seq=2054 (last=2054), updated_at=1768961520.07 (last=1768961520.07)
+[WS][SHARED][DEBUG] 读取统计: read=4495, skip=3832, 当前seq=2054 (last=2054), updated_at=1768961520.07 (last=1768961520.07)
+[PX] bid=0.8000 ask=0.8100 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 96
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4505, skip=3842, 当前seq=2054 (last=2054), updated_at=1768961520.07 (last=1768961520.07)
+[WS][SHARED][DEBUG] 读取统计: read=4515, skip=3852, 当前seq=2054 (last=2054), updated_at=1768961520.07 (last=1768961520.07)
+[WS][SHARED][DEBUG] 读取统计: read=4525, skip=3862, 当前seq=2054 (last=2054), updated_at=1768961520.07 (last=1768961520.07)
+[WS][SHARED] seq=2055, updates=2 (2.0/min), bid=0.8, ask=0.81, price=0.84
+[WS][SHARED][DEBUG] 读取统计: read=4535, skip=3871, 当前seq=2055 (last=2055), updated_at=1768961578.14 (last=1768961578.14)
+[WS][SHARED][DEBUG] 读取统计: read=4545, skip=3880, 当前seq=2056 (last=2056), updated_at=1768961583.70 (last=1768961583.70)
+[PX] bid=0.8000 ask=0.8100 last=0.7800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 91
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4555, skip=3890, 当前seq=2056 (last=2056), updated_at=1768961583.70 (last=1768961583.70)
+[WS][SHARED] seq=2058, updates=2 (3.1/min), bid=0.8, ask=0.81, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=4565, skip=3898, 当前seq=2059 (last=2059), updated_at=1768961618.18 (last=1768961618.18)
+[WS][SHARED][DEBUG] 读取统计: read=4575, skip=3908, 当前seq=2059 (last=2059), updated_at=1768961618.18 (last=1768961618.18)
+[WS][SHARED][DEBUG] 读取统计: read=4585, skip=3918, 当前seq=2059 (last=2059), updated_at=1768961618.18 (last=1768961618.18)
+[WS][SHARED] seq=2060, updates=2 (3.6/min), bid=0.8, ask=0.81, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=4595, skip=3927, 当前seq=2060 (last=2060), updated_at=1768961648.91 (last=1768961648.91)
+[PX] bid=0.8000 ask=0.8100 last=0.9600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 88
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4605, skip=3937, 当前seq=2060 (last=2060), updated_at=1768961648.91 (last=1768961648.91)
+[WS][SHARED] seq=2063, updates=1 (1.9/min), bid=0.8, ask=0.81, price=0.84
+[WS][SHARED][DEBUG] 读取统计: read=4615, skip=3946, 当前seq=2063 (last=2063), updated_at=1768961681.32 (last=1768961681.32)
+[WS][SHARED][DEBUG] 读取统计: read=4625, skip=3954, 当前seq=2065 (last=2065), updated_at=1768961688.67 (last=1768961688.67)
+[WS][SHARED][DEBUG] 读取统计: read=4635, skip=3963, 当前seq=2066 (last=2066), updated_at=1768961700.46 (last=1768961700.46)
+[WS][SHARED][DEBUG] 读取统计: read=4645, skip=3972, 当前seq=2067 (last=2067), updated_at=1768961709.94 (last=1768961709.94)
+[WS][SHARED] seq=2068, updates=5 (8.8/min), bid=0.8, ask=0.81, price=0.82
+[PX] bid=0.8000 ask=0.8100 last=0.8200 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 83
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4655, skip=3981, 当前seq=2068 (last=2068), updated_at=1768961715.24 (last=1768961715.24)
+[WS][SHARED][DEBUG] 读取统计: read=4665, skip=3990, 当前seq=2070 (last=2070), updated_at=1768961733.10 (last=1768961733.10)
+[WS][SHARED][DEBUG] 读取统计: read=4675, skip=4000, 当前seq=2070 (last=2070), updated_at=1768961733.10 (last=1768961733.10)
+[WS][SHARED] seq=2071, updates=2 (2.7/min), bid=0.8, ask=0.81, price=0.84
+[WS][SHARED][DEBUG] 读取统计: read=4685, skip=4009, 当前seq=2071 (last=2071), updated_at=1768961760.16 (last=1768961760.16)
+[WS][SHARED][DEBUG] 读取统计: read=4695, skip=4018, 当前seq=2072 (last=2072), updated_at=1768961770.85 (last=1768961770.85)
+[PX] bid=0.8000 ask=0.8100 last=0.8100 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 86
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4705, skip=4026, 当前seq=2078 (last=2074), updated_at=1768961791.62 (last=1768961781.28)
+[WS][SHARED] seq=2078, updates=4 (7.5/min), bid=0.8, ask=0.81, price=0.76
+[WS][SHARED][DEBUG] 读取统计: read=4715, skip=4035, 当前seq=2078 (last=2078), updated_at=1768961791.62 (last=1768961791.62)
+[WS][SHARED][DEBUG] 读取统计: read=4725, skip=4043, 当前seq=2080 (last=2080), updated_at=1768961804.24 (last=1768961804.24)
+[WS][SHARED][DEBUG] 读取统计: read=4735, skip=4052, 当前seq=2087 (last=2082), updated_at=1768961822.44 (last=1768961817.17)
+[WS][SHARED] seq=2087, updates=4 (8.0/min), bid=0.8, ask=0.81, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=4745, skip=4061, 当前seq=2087 (last=2087), updated_at=1768961822.44 (last=1768961822.44)
+[PX] bid=0.8000 ask=0.8100 last=0.7900 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 89
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4755, skip=4071, 当前seq=2093 (last=2087), updated_at=1768961845.49 (last=1768961822.44)
+[WS][SHARED] seq=2093, updates=1 (2.0/min), bid=0.8, ask=0.81, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=4765, skip=4080, 当前seq=2093 (last=2093), updated_at=1768961845.49 (last=1768961845.49)
+[WS][SHARED][DEBUG] 读取统计: read=4775, skip=4088, 当前seq=2101 (last=2101), updated_at=1768961864.49 (last=1768961864.49)
+[WS][SHARED][DEBUG] 读取统计: read=4785, skip=4098, 当前seq=2101 (last=2101), updated_at=1768961864.49 (last=1768961864.49)
+[WS][SHARED][DEBUG] 读取统计: read=4795, skip=4108, 当前seq=2101 (last=2101), updated_at=1768961864.49 (last=1768961864.49)
+[PX] bid=0.8000 ask=0.8100 last=0.8400 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 85
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4805, skip=4118, 当前seq=2101 (last=2101), updated_at=1768961864.49 (last=1768961864.49)
+[WS][SHARED] seq=2102, updates=3 (2.9/min), bid=0.8, ask=0.81, price=0.79
+[WS][SHARED][DEBUG] 读取统计: read=4815, skip=4127, 当前seq=2102 (last=2102), updated_at=1768961915.92 (last=1768961915.92)
+[WS][SHARED][DEBUG] 读取统计: read=4825, skip=4136, 当前seq=2106 (last=2105), updated_at=1768961932.97 (last=1768961929.24)
+[WS][SHARED][DEBUG] 读取统计: read=4835, skip=4145, 当前seq=2106 (last=2106), updated_at=1768961932.97 (last=1768961932.97)
+[WS][SHARED][DEBUG] 读取统计: read=4845, skip=4155, 当前seq=2106 (last=2106), updated_at=1768961932.97 (last=1768961932.97)
+[WS][SHARED] seq=2107, updates=3 (3.9/min), bid=0.8, ask=0.81, price=0.96
+[PX] bid=0.8000 ask=0.8100 last=0.9600 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 71
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4855, skip=4164, 当前seq=2114 (last=2107), updated_at=1768961972.62 (last=1768961962.16)
+[WS][SHARED][DEBUG] 读取统计: read=4865, skip=4173, 当前seq=2114 (last=2114), updated_at=1768961972.62 (last=1768961972.62)
+[WS][SHARED][DEBUG] 读取统计: read=4875, skip=4183, 当前seq=2114 (last=2114), updated_at=1768961972.62 (last=1768961972.62)
+[WS][SHARED][DEBUG] 读取统计: read=4885, skip=4193, 当前seq=2114 (last=2114), updated_at=1768961972.62 (last=1768961972.62)
+[WS][SHARED] seq=2115, updates=2 (2.8/min), bid=0.8, ask=0.81, price=0.19
+[WS][SHARED][DEBUG] 读取统计: read=4895, skip=4201, 当前seq=2117 (last=2117), updated_at=1768962012.61 (last=1768962012.61)
+[PX] bid=0.8000 ask=0.8100 last=0.5800 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 65
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4905, skip=4211, 当前seq=2117 (last=2117), updated_at=1768962012.61 (last=1768962012.61)
+[WS][SHARED] seq=2119, updates=2 (3.8/min), bid=0.8, ask=0.81, price=0.81
+[WS][SHARED][DEBUG] 读取统计: read=4915, skip=4220, 当前seq=2119 (last=2119), updated_at=1768962036.19 (last=1768962036.19)
+[WS][SHARED][DEBUG] 读取统计: read=4925, skip=4229, 当前seq=2120 (last=2120), updated_at=1768962044.53 (last=1768962044.53)
+[WS][SHARED][DEBUG] 读取统计: read=4935, skip=4239, 当前seq=2120 (last=2120), updated_at=1768962044.53 (last=1768962044.53)
+[WS][SHARED][DEBUG] 读取统计: read=4945, skip=4249, 当前seq=2120 (last=2120), updated_at=1768962044.53 (last=1768962044.53)
+[PX] bid=0.8000 ask=0.8100 last=0.2700 | state=FLAT awaiting=None entry=None
+    时间窗口: 15.0m | 采样点数: 64
+    窗口跌幅: 当前 0.00% / 最大 0.00% / 阈值 0.10%
+    窗口价格: 高 0.8050 / 低 0.8050
+[WS][SHARED][DEBUG] 读取统计: read=4955, skip=4259, 当前seq=2122 (last=2120), updated_at=1768962092.57 (last=1768962044.53)
+[WS][SHARED] seq=2122, updates=2 (2.1/min), bid=0.8, ask=0.81, price=0.96
+[WS][SHARED][DEBUG] 读取统计: read=4965, skip=4268, 当前seq=2122 (last=2122), updated_at=1768962092.57 (last=1768962092.57)
+[WS][SHARED][DEBUG] 读取统计: read=4975, skip=4278, 当前seq=2122 (last=2122), updated_at=1768962092.57 (last=1768962092.57)
