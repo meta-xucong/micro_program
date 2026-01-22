@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bed-001",
+    "name": "云朵床",
+    "description": "柔软的低模卡通床，适合午后小憩。",
+    "category": "卧室"
+  },
+  {
+    "id": "desk-001",
+    "name": "学习桌",
+    "description": "木质桌面与储物抽屉，用来放置电脑和书本。",
+    "category": "工作"
+  },
+  {
+    "id": "chair-001",
+    "name": "休闲椅",
+    "description": "轻盈的椅子，适合搭配桌子或角落阅读。",
+    "category": "家具"
+  },
+  {
+    "id": "fridge-001",
+    "name": "小冰箱",
+    "description": "用于存放饮料和零食的迷你冰箱。",
+    "category": "家电"
+  },
+  {
+    "id": "shelf-001",
+    "name": "收纳架",
+    "description": "将装饰品和日常用品整齐摆放。",
+    "category": "收纳"
+  }
+]
