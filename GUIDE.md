@@ -155,7 +155,7 @@ sudo cp -r dist /home/demo-dist
 sudo tee /etc/nginx/sites-available/room-demo >/dev/null <<'NGINX_CONF'
 server {
   listen 80;
-  server_name 103.23.148.225或域名;
+  server_name 103.23.148.225;
   root /home/demo-dist;
   index index.html;
   location / {
