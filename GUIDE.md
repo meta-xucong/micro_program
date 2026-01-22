@@ -134,8 +134,8 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # 3) 拉取代码
-sudo mkdir -p /var/www
-cd /var/www
+sudo mkdir -p /home/demo
+cd /home/demo
 sudo git clone <你的仓库地址> room-demo
 cd room-demo
 
@@ -144,15 +144,15 @@ npm install
 npm run build
 
 # 5) 将 dist 部署到 Nginx 根目录
-sudo rm -rf /var/www/room-demo-dist
-sudo cp -r dist /var/www/room-demo-dist
+sudo rm -rf /home/demo/room-demo-dist
+sudo cp -r dist /home/demo/room-demo-dist
 
 # 6) 配置 Nginx
 sudo tee /etc/nginx/sites-available/room-demo >/dev/null <<'NGINX_CONF'
 server {
   listen 80;
   server_name 你的公网IP或域名;
-  root /var/www/room-demo-dist;
+  root /home/demo/room-demo-dist;
   index index.html;
   location / {
     try_files $uri $uri/ /index.html;
