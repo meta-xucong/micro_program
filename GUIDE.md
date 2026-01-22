@@ -62,7 +62,72 @@ npm run preview
 
 部署完成后会给你一个可公网访问的 URL。
 
-## 5. 微信小程序 WebView 内访问
+## 5. 使用 VPS 部署（有公网 IP）
+
+> 适合需要自有服务器、内网穿透或自定义域名的场景。
+
+### 方式 A：VPS 直接跑静态服务器
+
+1. 在本地构建产物：
+   ```bash
+   npm run build
+   ```
+2. 将 `dist/` 上传到 VPS（例如 `/var/www/room-demo`）：
+   ```bash
+   scp -r dist user@你的公网IP:/var/www/room-demo
+   ```
+3. 在 VPS 上安装并启动静态服务器（任选其一）：
+
+   **Nginx（推荐）**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install -y nginx
+   ```
+   配置 `/etc/nginx/sites-available/room-demo`：
+   ```nginx
+   server {
+     listen 80;
+     server_name 你的公网IP或域名;
+     root /var/www/room-demo;
+     index index.html;
+     location / {
+       try_files $uri $uri/ /index.html;
+     }
+   }
+   ```
+   启用并重启：
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/room-demo /etc/nginx/sites-enabled/room-demo
+   sudo nginx -t
+   sudo systemctl restart nginx
+   ```
+
+   **或使用 serve（快捷）**
+   ```bash
+   npm i -g serve
+   serve -s /var/www/room-demo -l 80
+   ```
+
+4. 浏览器访问：
+   ```
+   http://你的公网IP/
+   ```
+
+### 方式 B：VPS 直接跑开发服务器（不推荐长期使用）
+
+> 仅用于临时演示，不建议生产环境使用。
+
+```bash
+npm install
+npm run dev -- --host 0.0.0.0 --port 5173
+```
+
+浏览器访问：
+```
+http://你的公网IP:5173/
+```
+
+## 6. 微信小程序 WebView 内访问
 
 - 本项目已内置 `MiniProgramBridge` 适配逻辑。
 - 若运行在小程序 WebView 中，点击家具将调用：
