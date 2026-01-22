@@ -113,6 +113,63 @@ npm run preview
    http://你的公网IP/
    ```
 
+### 方式 A-1：VPS 直接拉取仓库并部署（完整指令）
+
+> 适合在 VPS 上直接拉取代码并构建部署。
+
+**环境要求（推荐 Ubuntu/Debian）**
+- Node.js 18+（含 npm）
+- Git
+- Nginx（可选，推荐用于生产）
+
+**一键执行流程（示例路径 `/var/www/room-demo`）：**
+
+```bash
+# 1) 安装依赖环境
+sudo apt-get update
+sudo apt-get install -y git nginx
+
+# 2) 安装 Node.js 18+（使用 NodeSource）
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 3) 拉取代码
+sudo mkdir -p /var/www
+cd /var/www
+sudo git clone <你的仓库地址> room-demo
+cd room-demo
+
+# 4) 安装依赖 & 构建
+npm install
+npm run build
+
+# 5) 将 dist 部署到 Nginx 根目录
+sudo rm -rf /var/www/room-demo-dist
+sudo cp -r dist /var/www/room-demo-dist
+
+# 6) 配置 Nginx
+sudo tee /etc/nginx/sites-available/room-demo >/dev/null <<'NGINX_CONF'
+server {
+  listen 80;
+  server_name 你的公网IP或域名;
+  root /var/www/room-demo-dist;
+  index index.html;
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+}
+NGINX_CONF
+
+sudo ln -sf /etc/nginx/sites-available/room-demo /etc/nginx/sites-enabled/room-demo
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+**部署完成后查看方式：**
+```
+http://你的公网IP/
+```
+
 ### 方式 B：VPS 直接跑开发服务器（不推荐长期使用）
 
 > 仅用于临时演示，不建议生产环境使用。
