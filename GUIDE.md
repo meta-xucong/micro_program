@@ -72,9 +72,9 @@ npm run preview
    ```bash
    npm run build
    ```
-2. 将 `dist/` 上传到 VPS（例如 `/var/www/room-demo`）：
+2. 将 `dist/` 上传到 VPS（例如 `/home/demo`）：
    ```bash
-   scp -r dist user@你的公网IP:/var/www/room-demo
+   scp -r dist user@103.23.148.225:/home/demo
    ```
 3. 在 VPS 上安装并启动静态服务器（任选其一）：
 
@@ -87,8 +87,8 @@ npm run preview
    ```nginx
    server {
      listen 80;
-     server_name 你的公网IP或域名;
-     root /var/www/room-demo;
+     server_name 103.23.148.225或域名;
+     root /home/demo;
      index index.html;
      location / {
        try_files $uri $uri/ /index.html;
@@ -105,12 +105,12 @@ npm run preview
    **或使用 serve（快捷）**
    ```bash
    npm i -g serve
-   serve -s /var/www/room-demo -l 80
+   serve -s /home/demo -l 80
    ```
 
 4. 浏览器访问：
    ```
-   http://你的公网IP/
+   http://103.23.148.225/
    ```
 
 ### 方式 A-1：VPS 直接拉取仓库并部署（完整指令）
@@ -122,7 +122,7 @@ npm run preview
 - Git
 - Nginx（可选，推荐用于生产）
 
-**一键执行流程（示例路径 `/var/www/room-demo`）：**
+**一键执行流程（示例路径 `/home/demo`）：**
 
 ```bash
 # 1) 安装依赖环境
@@ -134,25 +134,25 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # 3) 拉取代码
-sudo mkdir -p /home/demo
-cd /home/demo
-sudo git clone <你的仓库地址> room-demo
-cd room-demo
+sudo mkdir -p /home
+cd /home
+sudo git clone https://github.com/your-org/poly_case.git demo
+cd demo
 
 # 4) 安装依赖 & 构建
 npm install
 npm run build
 
 # 5) 将 dist 部署到 Nginx 根目录
-sudo rm -rf /home/demo/room-demo-dist
-sudo cp -r dist /home/demo/room-demo-dist
+sudo rm -rf /home/demo-dist
+sudo cp -r dist /home/demo-dist
 
 # 6) 配置 Nginx
 sudo tee /etc/nginx/sites-available/room-demo >/dev/null <<'NGINX_CONF'
 server {
   listen 80;
-  server_name 你的公网IP或域名;
-  root /home/demo/room-demo-dist;
+  server_name 103.23.148.225或域名;
+  root /home/demo-dist;
   index index.html;
   location / {
     try_files $uri $uri/ /index.html;
@@ -167,7 +167,7 @@ sudo systemctl restart nginx
 
 **部署完成后查看方式：**
 ```
-http://你的公网IP/
+http://103.23.148.225/
 ```
 
 ### 方式 B：VPS 直接跑开发服务器（不推荐长期使用）
@@ -181,7 +181,7 @@ npm run dev -- --host 0.0.0.0 --port 5173
 
 浏览器访问：
 ```
-http://你的公网IP:5173/
+http://103.23.148.225:5173/
 ```
 
 ## 6. 微信小程序 WebView 内访问
