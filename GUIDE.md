@@ -87,7 +87,7 @@ npm run preview
    ```nginx
    server {
      listen 80;
-     server_name 103.23.148.225或域名;
+     server_name 103.23.148.225;
      root /home/demo;
      index index.html;
      location / {
