@@ -1,0 +1,120 @@
+:root {
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  color: #1f2937;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #0b0f17;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ui-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.item-modal {
+  pointer-events: auto;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.item-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.item-modal__card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  width: min(360px, 84vw);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+}
+
+.item-modal__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.item-modal__desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.item-modal__meta {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.item-modal__actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item-modal__close {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.joystick {
+  pointer-events: auto;
+  position: absolute;
+  left: 16px;
+  bottom: 24px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+.joystick__thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.9);
+  box-shadow: 0 8px 18px rgba(14, 116, 144, 0.45);
+  transform: translate(0px, 0px);
+}
+
+.hud-hint {
+  pointer-events: none;
+  position: absolute;
+  right: 16px;
+  bottom: 24px;
+  padding: 10px 12px;
+  background: rgba(15, 23, 42, 0.5);
+  color: #e2e8f0;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+}
