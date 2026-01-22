@@ -136,7 +136,11 @@ sudo apt-get install -y nodejs
 # 3) 拉取代码
 sudo mkdir -p /home
 cd /home
-sudo git clone https://github.com/meta-xucong/micro_program.git demo
+
+rm -rf demo && \
+git -c protocol.version=1 -c http.version=HTTP/1.1 clone --depth 1 --filter=blob:none \
+https://github.com/meta-xucong/micro_program.git demo
+
 cd demo
 
 # 4) 安装依赖 & 构建
