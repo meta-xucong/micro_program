@@ -38,6 +38,10 @@ type FurnitureMaterials = {
   plant: THREE.MeshStandardMaterial;
   soil: THREE.MeshStandardMaterial;
   rug: THREE.MeshStandardMaterial;
+  glass: THREE.MeshPhysicalMaterial;
+  door: THREE.MeshStandardMaterial;
+  wallTrim: THREE.MeshStandardMaterial;
+  ceiling: THREE.MeshStandardMaterial;
 };
 
 const TEXTURE_SIZE = 256;
@@ -103,13 +107,23 @@ const createFabricTexture = (base: string, accent: string) =>
 
 const createWallTexture = () =>
   createCanvasTexture((ctx) => {
-    ctx.fillStyle = "#e7ecf3";
+    const gradient = ctx.createLinearGradient(0, 0, 0, TEXTURE_SIZE);
+    gradient.addColorStop(0, "#f0f4f8");
+    gradient.addColorStop(1, "#e2e8f0");
+    ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
-    for (let i = 0; i < 200; i += 1) {
+    for (let i = 0; i < 280; i += 1) {
       const x = Math.random() * TEXTURE_SIZE;
       const y = Math.random() * TEXTURE_SIZE;
-      ctx.fillStyle = "rgba(180, 190, 205, 0.2)";
+      ctx.fillStyle = "rgba(170, 180, 195, 0.2)";
       ctx.fillRect(x, y, 2, 2);
+    }
+    ctx.strokeStyle = "rgba(200, 210, 225, 0.5)";
+    for (let i = 0; i < 6; i += 1) {
+      ctx.beginPath();
+      ctx.moveTo(0, (TEXTURE_SIZE / 6) * i);
+      ctx.lineTo(TEXTURE_SIZE, (TEXTURE_SIZE / 6) * i);
+      ctx.stroke();
     }
   });
 
@@ -122,6 +136,32 @@ const createRugTexture = () =>
     ctx.strokeRect(16, 16, TEXTURE_SIZE - 32, TEXTURE_SIZE - 32);
     ctx.strokeStyle = "rgba(120, 80, 60, 0.3)";
     for (let i = 0; i < TEXTURE_SIZE; i += 28) {
+      ctx.beginPath();
+      ctx.moveTo(i, 0);
+      ctx.lineTo(i + 20, TEXTURE_SIZE);
+      ctx.stroke();
+    }
+  });
+
+const createCeilingTexture = () =>
+  createCanvasTexture((ctx) => {
+    ctx.fillStyle = "#f8fafc";
+    ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
+    ctx.strokeStyle = "rgba(210, 220, 230, 0.5)";
+    for (let i = 0; i < TEXTURE_SIZE; i += 32) {
+      ctx.beginPath();
+      ctx.moveTo(0, i);
+      ctx.lineTo(TEXTURE_SIZE, i);
+      ctx.stroke();
+    }
+  });
+
+const createMetalTexture = () =>
+  createCanvasTexture((ctx) => {
+    ctx.fillStyle = "#b6c0cc";
+    ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
+    ctx.strokeStyle = "rgba(255,255,255,0.5)";
+    for (let i = 0; i < TEXTURE_SIZE; i += 18) {
       ctx.beginPath();
       ctx.moveTo(i, 0);
       ctx.lineTo(i + 20, TEXTURE_SIZE);
@@ -164,9 +204,9 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
       roughness: 0.85
     }),
     metal: new THREE.MeshStandardMaterial({
-      color: 0x94a3b8,
-      metalness: 0.7,
-      roughness: 0.3
+      map: createMetalTexture(),
+      metalness: 0.8,
+      roughness: 0.2
     }),
     plastic: new THREE.MeshStandardMaterial({
       color: 0xf8fafc,
@@ -183,6 +223,27 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     rug: new THREE.MeshStandardMaterial({
       map: createRugTexture(),
       roughness: 0.9
+    }),
+    glass: new THREE.MeshPhysicalMaterial({
+      color: 0xdbeafe,
+      transparent: true,
+      opacity: 0.55,
+      roughness: 0.05,
+      metalness: 0,
+      transmission: 0.6,
+      thickness: 0.1
+    }),
+    door: new THREE.MeshStandardMaterial({
+      color: 0x7b5a3a,
+      roughness: 0.65
+    }),
+    wallTrim: new THREE.MeshStandardMaterial({
+      color: 0xcbd5e1,
+      roughness: 0.7
+    }),
+    ceiling: new THREE.MeshStandardMaterial({
+      map: createCeilingTexture(),
+      roughness: 0.95
     })
   };
 
@@ -218,6 +279,8 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     scene.add(wall);
     walls.push(wall);
   });
+
+  addRoomDetails(scene, roomSize, wallThickness, materials);
 
   const itemMap = new Map<string, ItemDetail>();
   items.forEach((item) => itemMap.set(item.id, item));
@@ -550,4 +613,74 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
   }
 
   return { group, interactionMesh };
+}
+
+function addRoomDetails(
+  scene: THREE.Scene,
+  roomSize: THREE.Vector3,
+  wallThickness: number,
+  materials: FurnitureMaterials
+) {
+  const ceilingGeometry = new THREE.PlaneGeometry(roomSize.x, roomSize.z);
+  const ceiling = new THREE.Mesh(ceilingGeometry, materials.ceiling);
+  ceiling.rotation.x = Math.PI / 2;
+  ceiling.position.y = roomSize.y;
+  ceiling.receiveShadow = true;
+  scene.add(ceiling);
+
+  const trimHeight = 0.08;
+  const trimGeometry = new THREE.BoxGeometry(roomSize.x, trimHeight, wallThickness / 2);
+  const trimBack = new THREE.Mesh(trimGeometry, materials.wallTrim);
+  trimBack.position.set(0, trimHeight / 2, -roomSize.z / 2 + wallThickness / 4);
+  const trimFront = trimBack.clone();
+  trimFront.position.z = roomSize.z / 2 - wallThickness / 4;
+  scene.add(trimBack, trimFront);
+
+  const sideTrimGeometry = new THREE.BoxGeometry(wallThickness / 2, trimHeight, roomSize.z);
+  const trimLeft = new THREE.Mesh(sideTrimGeometry, materials.wallTrim);
+  trimLeft.position.set(-roomSize.x / 2 + wallThickness / 4, trimHeight / 2, 0);
+  const trimRight = trimLeft.clone();
+  trimRight.position.x = roomSize.x / 2 - wallThickness / 4;
+  scene.add(trimLeft, trimRight);
+
+  const doorGroup = new THREE.Group();
+  const doorWidth = 1.4;
+  const doorHeight = 2.4;
+  const doorFrame = new THREE.Mesh(
+    new THREE.BoxGeometry(doorWidth + 0.2, doorHeight + 0.2, 0.1),
+    materials.wood
+  );
+  const doorPanel = new THREE.Mesh(
+    new THREE.BoxGeometry(doorWidth, doorHeight, 0.08),
+    materials.door
+  );
+  const handle = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.03, 0.03, 0.18, 12),
+    materials.metal
+  );
+  handle.rotation.z = Math.PI / 2;
+  handle.position.set(doorWidth * 0.25, 0, 0.06);
+  doorGroup.add(doorFrame, doorPanel, handle);
+  doorGroup.position.set(-roomSize.x / 2 + doorWidth / 2 + 0.2, doorHeight / 2, roomSize.z / 2 - wallThickness / 2);
+  scene.add(doorGroup);
+
+  const windowWidth = 1.8;
+  const windowHeight = 1.1;
+  const windowGroup = new THREE.Group();
+  const frame = new THREE.Mesh(
+    new THREE.BoxGeometry(windowWidth + 0.15, windowHeight + 0.15, 0.08),
+    materials.wood
+  );
+  const glass = new THREE.Mesh(
+    new THREE.BoxGeometry(windowWidth, windowHeight, 0.05),
+    materials.glass
+  );
+  windowGroup.add(frame, glass);
+  windowGroup.position.set(0, 1.6, -roomSize.z / 2 + wallThickness / 2);
+  scene.add(windowGroup);
+
+  const sideWindow = windowGroup.clone();
+  sideWindow.rotation.y = Math.PI / 2;
+  sideWindow.position.set(roomSize.x / 2 - wallThickness / 2, 1.7, 0.8);
+  scene.add(sideWindow);
 }

@@ -9,8 +9,9 @@ export class InputSystem {
   private keys = new Set<string>();
   private joystick: JoystickState;
   private hasTouch = false;
+  private isPointerDown = false;
 
-  constructor(container: HTMLElement) {
+  constructor(container: HTMLElement, pointerTarget?: HTMLElement) {
     this.joystick = this.createJoystick(container);
 
     window.addEventListener("keydown", (event) => {
@@ -21,15 +22,39 @@ export class InputSystem {
       this.keys.delete(event.key.toLowerCase());
     });
 
-    window.addEventListener("touchstart", () => {
-      this.hasTouch = true;
-    }, { passive: true });
+    window.addEventListener(
+      "touchstart",
+      () => {
+        this.hasTouch = true;
+      },
+      { passive: true }
+    );
+
+    const target = pointerTarget ?? container;
+    target.addEventListener("pointerdown", (event) => {
+      if ((event.target as HTMLElement | null)?.closest(".joystick")) {
+        return;
+      }
+      this.isPointerDown = true;
+    });
+
+    const endPointer = () => {
+      this.isPointerDown = false;
+    };
+
+    window.addEventListener("pointerup", endPointer);
+    window.addEventListener("pointercancel", endPointer);
+    window.addEventListener("blur", endPointer);
   }
 
   getDirection() {
     const keyboard = {
-      x: (this.keys.has("d") ? 1 : 0) - (this.keys.has("a") ? 1 : 0),
-      z: (this.keys.has("s") ? 1 : 0) - (this.keys.has("w") ? 1 : 0)
+      x:
+        (this.keys.has("d") || this.keys.has("arrowright") ? 1 : 0) -
+        (this.keys.has("a") || this.keys.has("arrowleft") ? 1 : 0),
+      z:
+        (this.keys.has("s") || this.keys.has("arrowdown") ? 1 : 0) -
+        (this.keys.has("w") || this.keys.has("arrowup") ? 1 : 0)
     };
 
     const joy = this.joystick.value;
@@ -40,6 +65,10 @@ export class InputSystem {
       x: keyboard.x + joyVector.x,
       z: keyboard.z + joyVector.z
     };
+  }
+
+  isViewAdjusting() {
+    return this.isPointerDown;
   }
 
   private createJoystick(container: HTMLElement): JoystickState {

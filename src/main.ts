@@ -46,7 +46,7 @@ dirLight.shadow.mapSize.set(1024, 1024);
 scene.add(dirLight);
 
 const modal = new ItemModal(app);
-const input = new InputSystem(overlay);
+const input = new InputSystem(overlay, renderer.domElement);
 
 async function loadData() {
   const [itemsRes, layoutRes] = await Promise.all([
@@ -68,6 +68,14 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
   const interaction = new InteractionSystem(renderer, camera, room, modal);
 
   const baseCameraOffset = new THREE.Vector3(0, 4.2, 6.2);
+  const cameraState = {
+    yaw: Math.atan2(baseCameraOffset.x, baseCameraOffset.z),
+    pitch: Math.atan2(
+      baseCameraOffset.y,
+      Math.hypot(baseCameraOffset.x, baseCameraOffset.z)
+    ),
+    distance: baseCameraOffset.length()
+  };
 
   const tmpBox = new THREE.Box3();
   const moveSpeed = 2.1;
@@ -91,10 +99,21 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
 
     const direction = input.getDirection();
     const moveVector = new THREE.Vector3(direction.x, 0, direction.z);
-    if (moveVector.lengthSq() > 0) {
+    const isViewAdjusting = input.isViewAdjusting();
+    if (moveVector.lengthSq() > 0 && !isViewAdjusting) {
       moveVector.normalize().multiplyScalar(moveSpeed * delta);
       attemptMove(character, moveVector, colliders, roomBounds, tmpBox);
       targetRotation = Math.atan2(moveVector.x, moveVector.z);
+    }
+
+    if (isViewAdjusting && moveVector.lengthSq() > 0) {
+      const rotateSpeed = 1.6;
+      cameraState.yaw += moveVector.x * rotateSpeed * delta;
+      cameraState.pitch = THREE.MathUtils.clamp(
+        cameraState.pitch - moveVector.z * rotateSpeed * delta,
+        0.15,
+        1.1
+      );
     }
 
     updateCharacterCollider(character);
@@ -104,7 +123,12 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
       6 * delta
     );
 
-    const targetCamera = character.mesh.position.clone().add(baseCameraOffset);
+    const offset = new THREE.Vector3(
+      Math.sin(cameraState.yaw) * Math.cos(cameraState.pitch),
+      Math.sin(cameraState.pitch),
+      Math.cos(cameraState.yaw) * Math.cos(cameraState.pitch)
+    ).multiplyScalar(cameraState.distance);
+    const targetCamera = character.mesh.position.clone().add(offset);
     camera.position.lerp(targetCamera, 0.1);
     camera.lookAt(character.mesh.position.clone().add(new THREE.Vector3(0, 0.9, 0)));
 
