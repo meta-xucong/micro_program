@@ -23,8 +23,11 @@ export function createCharacter(): Character {
 
   const loader = new GLTFLoader();
   const baseUrl = import.meta.env.BASE_URL ?? "/";
+  const resolvedBaseUrl = new URL(baseUrl, window.location.origin).toString();
+  const pageBaseUrl = new URL("./", window.location.href).toString();
   const modelUrls = [
-    `${baseUrl}models/RiggedFigure.glb`,
+    new URL("models/RiggedFigure.glb", resolvedBaseUrl).toString(),
+    new URL("models/RiggedFigure.glb", pageBaseUrl).toString(),
     "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb",
     "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb"
   ];
@@ -43,9 +46,7 @@ export function createCharacter(): Character {
     const scale = targetHeight / (size.y || 1);
     model.scale.setScalar(scale);
     const scaledBox = new THREE.Box3().setFromObject(model);
-    const min = new THREE.Vector3();
-    scaledBox.getMin(min);
-    model.position.y -= min.y;
+    model.position.y -= scaledBox.min.y;
     placeholder.visible = false;
     group.add(model);
   };
