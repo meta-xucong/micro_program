@@ -23,7 +23,7 @@ export function createCharacter(): Character {
 
   const loader = new GLTFLoader();
   const modelUrls = [
-    "/models/rigged-figure.glb",
+    "/models/RiggedFigure.glb",
     "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb"
   ];
 
