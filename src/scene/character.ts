@@ -22,9 +22,11 @@ export function createCharacter(): Character {
   group.add(placeholder);
 
   const loader = new GLTFLoader();
+  const baseUrl = import.meta.env.BASE_URL ?? "/";
   const modelUrls = [
-    "/models/RiggedFigure.glb",
-    "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb"
+    `${baseUrl}models/RiggedFigure.glb`,
+    "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb",
+    "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb"
   ];
 
   const applyModel = (model: THREE.Object3D) => {
@@ -58,7 +60,8 @@ export function createCharacter(): Character {
         applyModel(gltf.scene);
       },
       undefined,
-      () => {
+      (error) => {
+        console.warn("Failed to load character model:", modelUrls[index], error);
         loadModel(index + 1);
       }
     );
