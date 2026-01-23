@@ -23,7 +23,7 @@ export function createCharacter(): Character {
 
   const loader = new GLTFLoader();
   loader.load(
-    "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+    "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/CesiumMan/glTF-Binary/CesiumMan.glb",
     (gltf) => {
       const model = gltf.scene;
       model.traverse((child) => {

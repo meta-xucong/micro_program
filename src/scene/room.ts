@@ -45,6 +45,8 @@ type FurnitureMaterials = {
 };
 
 const TEXTURE_SIZE = 256;
+const textureLoader = new THREE.TextureLoader();
+textureLoader.crossOrigin = "anonymous";
 
 const createCanvasTexture = (draw: (ctx: CanvasRenderingContext2D) => void) => {
   const canvas = document.createElement("canvas");
@@ -63,86 +65,6 @@ const createCanvasTexture = (draw: (ctx: CanvasRenderingContext2D) => void) => {
   return texture;
 };
 
-const createWoodTexture = () =>
-  createCanvasTexture((ctx) => {
-    ctx.fillStyle = "#d6c2a0";
-    ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
-    for (let i = 0; i < 12; i += 1) {
-      ctx.fillStyle = i % 2 === 0 ? "#c9b08a" : "#bfa078";
-      ctx.fillRect(0, (TEXTURE_SIZE / 12) * i, TEXTURE_SIZE, TEXTURE_SIZE / 12);
-    }
-    ctx.strokeStyle = "rgba(120, 90, 60, 0.25)";
-    for (let i = 0; i < 18; i += 1) {
-      ctx.beginPath();
-      ctx.moveTo(0, (TEXTURE_SIZE / 18) * i + 4);
-      ctx.bezierCurveTo(
-        TEXTURE_SIZE * 0.3,
-        (TEXTURE_SIZE / 18) * i + 10,
-        TEXTURE_SIZE * 0.6,
-        (TEXTURE_SIZE / 18) * i - 4,
-        TEXTURE_SIZE,
-        (TEXTURE_SIZE / 18) * i + 6
-      );
-      ctx.stroke();
-    }
-  });
-
-const createFabricTexture = (base: string, accent: string) =>
-  createCanvasTexture((ctx) => {
-    ctx.fillStyle = base;
-    ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
-    ctx.strokeStyle = accent;
-    ctx.lineWidth = 2;
-    for (let i = 0; i < TEXTURE_SIZE; i += 24) {
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i, TEXTURE_SIZE);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(0, i);
-      ctx.lineTo(TEXTURE_SIZE, i);
-      ctx.stroke();
-    }
-  });
-
-const createWallTexture = () =>
-  createCanvasTexture((ctx) => {
-    const gradient = ctx.createLinearGradient(0, 0, 0, TEXTURE_SIZE);
-    gradient.addColorStop(0, "#f0f4f8");
-    gradient.addColorStop(1, "#e2e8f0");
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
-    for (let i = 0; i < 280; i += 1) {
-      const x = Math.random() * TEXTURE_SIZE;
-      const y = Math.random() * TEXTURE_SIZE;
-      ctx.fillStyle = "rgba(170, 180, 195, 0.2)";
-      ctx.fillRect(x, y, 2, 2);
-    }
-    ctx.strokeStyle = "rgba(200, 210, 225, 0.5)";
-    for (let i = 0; i < 6; i += 1) {
-      ctx.beginPath();
-      ctx.moveTo(0, (TEXTURE_SIZE / 6) * i);
-      ctx.lineTo(TEXTURE_SIZE, (TEXTURE_SIZE / 6) * i);
-      ctx.stroke();
-    }
-  });
-
-const createRugTexture = () =>
-  createCanvasTexture((ctx) => {
-    ctx.fillStyle = "#f1d5b1";
-    ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
-    ctx.strokeStyle = "rgba(180, 110, 70, 0.35)";
-    ctx.lineWidth = 6;
-    ctx.strokeRect(16, 16, TEXTURE_SIZE - 32, TEXTURE_SIZE - 32);
-    ctx.strokeStyle = "rgba(120, 80, 60, 0.3)";
-    for (let i = 0; i < TEXTURE_SIZE; i += 28) {
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i + 20, TEXTURE_SIZE);
-      ctx.stroke();
-    }
-  });
-
 const createCeilingTexture = () =>
   createCanvasTexture((ctx) => {
     ctx.fillStyle = "#f8fafc";
@@ -156,25 +78,89 @@ const createCeilingTexture = () =>
     }
   });
 
-const createMetalTexture = () =>
-  createCanvasTexture((ctx) => {
-    ctx.fillStyle = "#b6c0cc";
-    ctx.fillRect(0, 0, TEXTURE_SIZE, TEXTURE_SIZE);
-    ctx.strokeStyle = "rgba(255,255,255,0.5)";
-    for (let i = 0; i < TEXTURE_SIZE; i += 18) {
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i + 20, TEXTURE_SIZE);
-      ctx.stroke();
-    }
-  });
+const loadTexture = (
+  url: string,
+  options: { repeat?: number; colorSpace?: THREE.ColorSpace } = {}
+) => {
+  const texture = textureLoader.load(url);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  const repeat = options.repeat ?? 1;
+  texture.repeat.set(repeat, repeat);
+  texture.anisotropy = 8;
+  if (options.colorSpace) {
+    texture.colorSpace = options.colorSpace;
+  }
+  return texture;
+};
+
+const loadPbrTextures = (urls: { color: string; roughness: string; normal: string }, repeat = 1) => ({
+  map: loadTexture(urls.color, { repeat, colorSpace: THREE.SRGBColorSpace }),
+  roughnessMap: loadTexture(urls.roughness, { repeat, colorSpace: THREE.NoColorSpace }),
+  normalMap: loadTexture(urls.normal, { repeat, colorSpace: THREE.NoColorSpace })
+});
 
 export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDetail[]): RoomAssets {
   const roomSize = new THREE.Vector3(...layout.roomSize);
+  const woodTextures = loadPbrTextures(
+    {
+      color:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wooden_planks/dark_wooden_planks_diff_1k.jpg",
+      roughness:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wooden_planks/dark_wooden_planks_rough_1k.jpg",
+      normal:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wooden_planks/dark_wooden_planks_nor_gl_1k.jpg"
+    },
+    2.2
+  );
+  const fabricTextures = loadPbrTextures(
+    {
+      color:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/denim_fabric/denim_fabric_diff_1k.jpg",
+      roughness:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/denim_fabric/denim_fabric_rough_1k.jpg",
+      normal:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/denim_fabric/denim_fabric_nor_gl_1k.jpg"
+    },
+    1.6
+  );
+  const metalTextures = loadPbrTextures(
+    {
+      color:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_diff_1k.jpg",
+      roughness:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_rough_1k.jpg",
+      normal:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/metal_plate/metal_plate_nor_gl_1k.jpg"
+    },
+    1.2
+  );
+  const wallTextures = loadPbrTextures(
+    {
+      color:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_diff_1k.jpg",
+      roughness:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_rough_1k.jpg",
+      normal:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_nor_gl_1k.jpg"
+    },
+    1.8
+  );
+  const rugTextures = loadPbrTextures(
+    {
+      color:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dirty_carpet/dirty_carpet_diff_1k.jpg",
+      roughness:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dirty_carpet/dirty_carpet_rough_1k.jpg",
+      normal:
+        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dirty_carpet/dirty_carpet_nor_gl_1k.jpg"
+    },
+    2.6
+  );
   const floorGeometry = new THREE.PlaneGeometry(roomSize.x, roomSize.z);
   const floorMaterial = new THREE.MeshStandardMaterial({
-    map: createWoodTexture(),
-    roughness: 0.7
+    ...woodTextures,
+    roughness: 0.55
   });
   const floor = new THREE.Mesh(floorGeometry, floorMaterial);
   floor.rotation.x = -Math.PI / 2;
@@ -182,60 +168,68 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
   scene.add(floor);
 
   const wallMaterial = new THREE.MeshStandardMaterial({
-    map: createWallTexture(),
-    roughness: 0.95
+    ...wallTextures,
+    roughness: 0.9
   });
 
   const materials: FurnitureMaterials = {
     wood: new THREE.MeshStandardMaterial({
-      map: createWoodTexture(),
-      roughness: 0.6
+      ...woodTextures,
+      roughness: 0.5
     }),
     fabricBlue: new THREE.MeshStandardMaterial({
-      map: createFabricTexture("#94c5f4", "#6aa3de"),
-      roughness: 0.8
+      ...fabricTextures,
+      color: new THREE.Color(0x93c5fd),
+      roughness: 0.9
     }),
     fabricWarm: new THREE.MeshStandardMaterial({
-      map: createFabricTexture("#f3cba5", "#d3a47a"),
-      roughness: 0.85
+      ...fabricTextures,
+      color: new THREE.Color(0xf3cba5),
+      roughness: 0.88
     }),
     fabricGray: new THREE.MeshStandardMaterial({
-      map: createFabricTexture("#cbd5f0", "#9aa5c8"),
-      roughness: 0.85
+      ...fabricTextures,
+      color: new THREE.Color(0xcbd5f0),
+      roughness: 0.9
     }),
     metal: new THREE.MeshStandardMaterial({
-      map: createMetalTexture(),
-      metalness: 0.8,
-      roughness: 0.2
+      ...metalTextures,
+      metalness: 1,
+      roughness: 0.28
     }),
     plastic: new THREE.MeshStandardMaterial({
       color: 0xf8fafc,
-      roughness: 0.45
+      roughness: 0.35
     }),
     plant: new THREE.MeshStandardMaterial({
       color: 0x22c55e,
-      roughness: 0.8
+      roughness: 0.75
     }),
     soil: new THREE.MeshStandardMaterial({
       color: 0x8b5e3c,
       roughness: 1
     }),
     rug: new THREE.MeshStandardMaterial({
-      map: createRugTexture(),
-      roughness: 0.9
+      ...rugTextures,
+      roughness: 0.95
     }),
     glass: new THREE.MeshPhysicalMaterial({
-      color: 0xdbeafe,
+      color: 0xe0f2fe,
       transparent: true,
-      opacity: 0.55,
-      roughness: 0.05,
+      opacity: 0.35,
+      roughness: 0.02,
       metalness: 0,
-      transmission: 0.6,
-      thickness: 0.1
+      transmission: 0.92,
+      thickness: 0.2,
+      ior: 1.5,
+      clearcoat: 0.4,
+      clearcoatRoughness: 0.15
     }),
     door: new THREE.MeshStandardMaterial({
-      color: 0x7b5a3a,
-      roughness: 0.65
+      ...metalTextures,
+      color: new THREE.Color(0x94a3b8),
+      metalness: 1,
+      roughness: 0.3
     }),
     wallTrim: new THREE.MeshStandardMaterial({
       color: 0xcbd5e1,
@@ -648,7 +642,7 @@ function addRoomDetails(
   const doorHeight = 2.4;
   const doorFrame = new THREE.Mesh(
     new THREE.BoxGeometry(doorWidth + 0.2, doorHeight + 0.2, 0.1),
-    materials.wood
+    materials.door
   );
   const doorPanel = new THREE.Mesh(
     new THREE.BoxGeometry(doorWidth, doorHeight, 0.08),
@@ -669,7 +663,7 @@ function addRoomDetails(
   const windowGroup = new THREE.Group();
   const frame = new THREE.Mesh(
     new THREE.BoxGeometry(windowWidth + 0.15, windowHeight + 0.15, 0.08),
-    materials.wood
+    materials.metal
   );
   const glass = new THREE.Mesh(
     new THREE.BoxGeometry(windowWidth, windowHeight, 0.05),
