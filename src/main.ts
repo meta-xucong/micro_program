@@ -98,7 +98,13 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
     lastTime = now;
 
     const direction = input.getDirection();
-    const moveVector = new THREE.Vector3(direction.x, 0, direction.z);
+    const sinYaw = Math.sin(cameraState.yaw);
+    const cosYaw = Math.cos(cameraState.yaw);
+    const moveVector = new THREE.Vector3(
+      direction.x * cosYaw + direction.z * sinYaw,
+      0,
+      direction.z * cosYaw - direction.x * sinYaw
+    );
     const isViewAdjusting = input.isViewAdjusting();
     if (moveVector.lengthSq() > 0 && !isViewAdjusting) {
       moveVector.normalize().multiplyScalar(moveSpeed * delta);
