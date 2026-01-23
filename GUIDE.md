@@ -174,6 +174,34 @@ sudo systemctl restart nginx
 http://103.23.148.225/
 ```
 
+### 方式 A-2：在 VPS 上更新已部署的应用（推荐日常更新）
+
+> 适合已经用上面方式部署完成后，后续只更新代码与静态资源。
+
+**更新步骤（示例路径 `/home/demo`）：**
+
+```bash
+# 1) 进入代码目录
+cd /home/demo
+
+# 2) 拉取最新代码
+git pull --rebase
+
+# 3) 重新安装依赖（如无依赖变更可跳过）
+npm install
+
+# 4) 重新构建
+npm run build
+
+# 5) 更新到 Nginx 根目录
+sudo rm -rf /home/demo-dist
+sudo cp -r dist /home/demo-dist
+
+# 6) 重新加载 Nginx
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
 ### 方式 B：VPS 直接跑开发服务器（不推荐长期使用）
 
 > 仅用于临时演示，不建议生产环境使用。

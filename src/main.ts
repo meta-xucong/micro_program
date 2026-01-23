@@ -71,6 +71,7 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
 
   const tmpBox = new THREE.Box3();
   const moveSpeed = 2.1;
+  let targetRotation = character.mesh.rotation.y;
 
   const roomBounds = {
     minX: -layout.roomSize[0] / 2 + 0.7,
@@ -93,9 +94,15 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
     if (moveVector.lengthSq() > 0) {
       moveVector.normalize().multiplyScalar(moveSpeed * delta);
       attemptMove(character, moveVector, colliders, roomBounds, tmpBox);
+      targetRotation = Math.atan2(moveVector.x, moveVector.z);
     }
 
     updateCharacterCollider(character);
+    character.mesh.rotation.y = rotateTowards(
+      character.mesh.rotation.y,
+      targetRotation,
+      6 * delta
+    );
 
     const targetCamera = character.mesh.position.clone().add(baseCameraOffset);
     camera.position.lerp(targetCamera, 0.1);
@@ -107,6 +114,12 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
 
   animate();
   return { interaction };
+}
+
+function rotateTowards(current: number, target: number, step: number) {
+  const delta = Math.atan2(Math.sin(target - current), Math.cos(target - current));
+  const next = current + Math.min(Math.abs(delta), step) * Math.sign(delta);
+  return next;
 }
 
 function attemptMove(
