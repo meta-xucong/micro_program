@@ -17,7 +17,7 @@ export function createCharacter(): Character {
   const group = new THREE.Group();
   group.position.set(0, 0, 0);
 
-  const targetHeight = 1.45;
+  const targetHeight = 1.6;
   const colliderSize = new THREE.Vector3(0.6, targetHeight, 0.6);
   const capsuleRadius = colliderSize.x / 2;
   const capsuleLength = targetHeight - capsuleRadius * 2;
