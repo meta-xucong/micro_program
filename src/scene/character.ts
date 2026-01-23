@@ -59,15 +59,36 @@ export function createCharacter(): Character {
         child.receiveShadow = true;
       }
     });
+    model.updateWorldMatrix(true, true);
     const box = new THREE.Box3().setFromObject(model);
     const size = new THREE.Vector3();
     box.getSize(size);
-    const scale = targetHeight / (size.y || 1);
+    if (size.y <= 0) {
+      console.warn("Character model has invalid bounds, keeping placeholder.");
+      return;
+    }
+    const baseHeight = size.y;
+    const scale = targetHeight / baseHeight;
     model.scale.setScalar(scale);
+    model.updateWorldMatrix(true, true);
     const scaledBox = new THREE.Box3().setFromObject(model);
-    model.position.y -= scaledBox.min.y;
-    placeholder.visible = false;
+    const scaledSize = new THREE.Vector3();
+    scaledBox.getSize(scaledSize);
+    if (scaledSize.y > 0) {
+      const correction = targetHeight / scaledSize.y;
+      model.scale.multiplyScalar(correction);
+      model.updateWorldMatrix(true, true);
+    }
+    const finalBox = new THREE.Box3().setFromObject(model);
+    const finalSize = new THREE.Vector3();
+    finalBox.getSize(finalSize);
+    if (finalSize.y <= 0) {
+      console.warn("Character model has invalid scaled bounds, keeping placeholder.");
+      return;
+    }
+    model.position.y -= finalBox.min.y;
     group.add(model);
+    placeholder.visible = false;
   };
 
   const loadModel = (index: number) => {
