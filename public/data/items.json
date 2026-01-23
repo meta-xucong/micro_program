@@ -28,5 +28,47 @@
     "name": "收纳架",
     "description": "将装饰品和日常用品整齐摆放。",
     "category": "收纳"
+  },
+  {
+    "id": "sofa-001",
+    "name": "布艺沙发",
+    "description": "柔软的三人位沙发，适合休息或聊天。",
+    "category": "客厅"
+  },
+  {
+    "id": "table-001",
+    "name": "茶几",
+    "description": "放置杂志与饮品的小桌。",
+    "category": "客厅"
+  },
+  {
+    "id": "plant-001",
+    "name": "绿植",
+    "description": "提升房间氛围的室内植物。",
+    "category": "装饰"
+  },
+  {
+    "id": "lamp-001",
+    "name": "落地灯",
+    "description": "提供柔和照明的落地灯。",
+    "category": "灯具"
+  },
+  {
+    "id": "wardrobe-001",
+    "name": "衣柜",
+    "description": "存放衣物的木质衣柜。",
+    "category": "卧室"
+  },
+  {
+    "id": "rug-001",
+    "name": "地毯",
+    "description": "温暖的编织地毯，提升舒适度。",
+    "category": "软装"
+  },
+  {
+    "id": "bookcase-001",
+    "name": "书柜",
+    "description": "放置书籍与摆件的高书柜。",
+    "category": "收纳"
   }
 ]
