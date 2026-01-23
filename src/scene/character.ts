@@ -22,34 +22,49 @@ export function createCharacter(): Character {
   group.add(placeholder);
 
   const loader = new GLTFLoader();
-  loader.load(
-    "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb",
-    (gltf) => {
-      const model = gltf.scene;
-      model.traverse((child) => {
-        if (child instanceof THREE.Mesh) {
-          child.castShadow = true;
-          child.receiveShadow = true;
-        }
-      });
-      const box = new THREE.Box3().setFromObject(model);
-      const size = new THREE.Vector3();
-      box.getSize(size);
-      const targetHeight = 1.7;
-      const scale = targetHeight / (size.y || 1);
-      model.scale.setScalar(scale);
-      const scaledBox = new THREE.Box3().setFromObject(model);
-      const min = new THREE.Vector3();
-      scaledBox.getMin(min);
-      model.position.y -= min.y;
-      placeholder.visible = false;
-      group.add(model);
-    },
-    undefined,
-    () => {
-      // Keep placeholder if model fails to load.
+  const modelUrls = [
+    "/models/rigged-figure.glb",
+    "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb"
+  ];
+
+  const applyModel = (model: THREE.Object3D) => {
+    model.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    const box = new THREE.Box3().setFromObject(model);
+    const size = new THREE.Vector3();
+    box.getSize(size);
+    const targetHeight = 1.7;
+    const scale = targetHeight / (size.y || 1);
+    model.scale.setScalar(scale);
+    const scaledBox = new THREE.Box3().setFromObject(model);
+    const min = new THREE.Vector3();
+    scaledBox.getMin(min);
+    model.position.y -= min.y;
+    placeholder.visible = false;
+    group.add(model);
+  };
+
+  const loadModel = (index: number) => {
+    if (index >= modelUrls.length) {
+      return;
     }
-  );
+    loader.load(
+      modelUrls[index],
+      (gltf) => {
+        applyModel(gltf.scene);
+      },
+      undefined,
+      () => {
+        loadModel(index + 1);
+      }
+    );
+  };
+
+  loadModel(0);
 
   const collider = new THREE.Box3().setFromCenterAndSize(
     group.position.clone(),
