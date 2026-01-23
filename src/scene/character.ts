@@ -1,28 +1,63 @@
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export type Character = {
-  mesh: THREE.Mesh;
+  mesh: THREE.Group;
   collider: THREE.Box3;
   velocity: THREE.Vector3;
 };
 
 export function createCharacter(): Character {
-  const geometry = new THREE.CapsuleGeometry(0.4, 0.9, 6, 12);
+  const group = new THREE.Group();
+  group.position.set(0, 0, 0);
+
+  const geometry = new THREE.CapsuleGeometry(0.35, 0.9, 6, 12);
   const material = new THREE.MeshStandardMaterial({
     color: 0x34d399,
     flatShading: true
   });
-  const mesh = new THREE.Mesh(geometry, material);
-  mesh.position.set(0, 0.95, 0);
-  mesh.castShadow = true;
+  const placeholder = new THREE.Mesh(geometry, material);
+  placeholder.position.set(0, 0.95, 0);
+  placeholder.castShadow = true;
+  group.add(placeholder);
+
+  const loader = new GLTFLoader();
+  loader.load(
+    "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+    (gltf) => {
+      const model = gltf.scene;
+      model.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+      const box = new THREE.Box3().setFromObject(model);
+      const size = new THREE.Vector3();
+      box.getSize(size);
+      const targetHeight = 1.7;
+      const scale = targetHeight / (size.y || 1);
+      model.scale.setScalar(scale);
+      const scaledBox = new THREE.Box3().setFromObject(model);
+      const min = new THREE.Vector3();
+      scaledBox.getMin(min);
+      model.position.y -= min.y;
+      placeholder.visible = false;
+      group.add(model);
+    },
+    undefined,
+    () => {
+      // Keep placeholder if model fails to load.
+    }
+  );
 
   const collider = new THREE.Box3().setFromCenterAndSize(
-    mesh.position.clone(),
+    group.position.clone(),
     new THREE.Vector3(0.8, 1.8, 0.8)
   );
 
   return {
-    mesh,
+    mesh: group,
     collider,
     velocity: new THREE.Vector3()
   };
