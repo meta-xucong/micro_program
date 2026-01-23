@@ -34,6 +34,7 @@ type FurnitureMaterials = {
   fabricWarm: THREE.MeshStandardMaterial;
   fabricGray: THREE.MeshStandardMaterial;
   leather: THREE.MeshStandardMaterial;
+  bookcase: THREE.MeshStandardMaterial;
   metal: THREE.MeshStandardMaterial;
   plastic: THREE.MeshStandardMaterial;
   plant: THREE.MeshStandardMaterial;
@@ -41,6 +42,7 @@ type FurnitureMaterials = {
   rug: THREE.MeshStandardMaterial;
   glass: THREE.MeshPhysicalMaterial;
   door: THREE.MeshStandardMaterial;
+  windowPane: THREE.MeshStandardMaterial;
   windowFrame: THREE.MeshStandardMaterial;
   wallTrim: THREE.MeshStandardMaterial;
   ceiling: THREE.MeshStandardMaterial;
@@ -115,17 +117,6 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     },
     2.2
   );
-  const floorTextures = loadPbrTextures(
-    {
-      color:
-        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/herringbone_parquet/herringbone_parquet_diff_1k.jpg",
-      roughness:
-        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/herringbone_parquet/herringbone_parquet_rough_1k.jpg",
-      normal:
-        "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/herringbone_parquet/herringbone_parquet_nor_gl_1k.jpg"
-    },
-    2.4
-  );
   const fabricTextures = loadPbrTextures(
     {
       color:
@@ -159,6 +150,17 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     },
     1.2
   );
+  const bookcaseTextures = loadPbrTextures(
+    {
+      color:
+        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_shelves/painted_wooden_shelves_diff_1k.jpg",
+      roughness:
+        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_shelves/painted_wooden_shelves_rough_1k.jpg",
+      normal:
+        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/painted_wooden_shelves/painted_wooden_shelves_nor_gl_1k.jpg"
+    },
+    1.4
+  );
   const windowFrameTextures = loadPbrTextures(
     {
       color:
@@ -169,6 +171,17 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
         "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_metal_shutter/painted_metal_shutter_nor_gl_1k.jpg"
     },
     1.6
+  );
+  const windowPaneTextures = loadPbrTextures(
+    {
+      color:
+        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rollershutter_window_01/rollershutter_window_01_diff_1k.jpg",
+      roughness:
+        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rollershutter_window_01/rollershutter_window_01_rough_1k.jpg",
+      normal:
+        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rollershutter_window_01/rollershutter_window_01_nor_gl_1k.jpg"
+    },
+    1.2
   );
   const doorTextures = loadPbrTextures(
     {
@@ -205,8 +218,9 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
   );
   const floorGeometry = new THREE.PlaneGeometry(roomSize.x, roomSize.z);
   const floorMaterial = new THREE.MeshStandardMaterial({
-    ...floorTextures,
-    roughness: 0.5
+    ...woodTextures,
+    color: new THREE.Color(0xf1e4d2),
+    roughness: 0.55
   });
   const floor = new THREE.Mesh(floorGeometry, floorMaterial);
   floor.rotation.x = -Math.PI / 2;
@@ -242,6 +256,11 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
       ...leatherTextures,
       color: new THREE.Color(0x7c5b4c),
       roughness: 0.7
+    }),
+    bookcase: new THREE.MeshStandardMaterial({
+      ...bookcaseTextures,
+      color: new THREE.Color(0xf8fafc),
+      roughness: 0.6
     }),
     metal: new THREE.MeshStandardMaterial({
       ...metalTextures,
@@ -281,6 +300,13 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
       color: new THREE.Color(0xffffff),
       metalness: 0.1,
       roughness: 0.55
+    }),
+    windowPane: new THREE.MeshStandardMaterial({
+      ...windowPaneTextures,
+      color: new THREE.Color(0xffffff),
+      roughness: 0.5,
+      emissive: new THREE.Color(0xbfd7ff),
+      emissiveIntensity: 0.25
     }),
     windowFrame: new THREE.MeshStandardMaterial({
       ...windowFrameTextures,
@@ -382,6 +408,7 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
     fabricWarm,
     fabricGray,
     leather,
+    bookcase: bookcaseMaterial,
     metal: metalMaterial,
     plastic: plasticWhite,
     plant: plantMaterial,
@@ -640,10 +667,10 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
       break;
     }
     case "bookcase": {
-      const frame = new THREE.Mesh(new THREE.BoxGeometry(size.x, size.y, size.z), woodMaterial);
+      const frame = new THREE.Mesh(new THREE.BoxGeometry(size.x, size.y, size.z), bookcaseMaterial);
       const shelf = new THREE.Mesh(
         new THREE.BoxGeometry(size.x * 0.9, size.y * 0.07, size.z * 0.9),
-        woodMaterial
+        bookcaseMaterial
       );
       const shelf2 = shelf.clone();
       const shelf3 = shelf.clone();
@@ -713,7 +740,7 @@ function addRoomDetails(
   handle.rotation.z = Math.PI / 2;
   handle.position.set(doorWidth * 0.25, 0, 0.06);
   doorGroup.add(doorFrame, doorPanel, handle);
-  doorGroup.position.set(-roomSize.x / 2 + doorWidth / 2 + 0.2, doorHeight / 2, roomSize.z / 2 - wallThickness / 2);
+  doorGroup.position.set(-roomSize.x / 6, doorHeight / 2, roomSize.z / 2 - wallThickness / 2);
   scene.add(doorGroup);
 
   const windowWidth = 1.8;
@@ -725,7 +752,7 @@ function addRoomDetails(
   );
   const glass = new THREE.Mesh(
     new THREE.BoxGeometry(windowWidth, windowHeight, 0.05),
-    materials.glass
+    materials.windowPane
   );
   windowGroup.add(frame, glass);
   windowGroup.position.set(0, 1.6, -roomSize.z / 2 + wallThickness / 2);
@@ -735,4 +762,62 @@ function addRoomDetails(
   sideWindow.rotation.y = Math.PI / 2;
   sideWindow.position.set(roomSize.x / 2 - wallThickness / 2, 1.7, 0.8);
   scene.add(sideWindow);
+
+  const tvGroup = new THREE.Group();
+  const tvWidth = 2.4;
+  const tvHeight = 1.4;
+  const tvDepth = 0.08;
+  const tvScreenMaterial = new THREE.MeshStandardMaterial({
+    color: 0x111827,
+    roughness: 0.3,
+    metalness: 0.2,
+    emissive: new THREE.Color(0x0f172a),
+    emissiveIntensity: 0.35
+  });
+  const tvFrameMaterial = new THREE.MeshStandardMaterial({
+    color: 0x0f172a,
+    roughness: 0.5,
+    metalness: 0.4
+  });
+  const tvFrame = new THREE.Mesh(
+    new THREE.BoxGeometry(tvWidth + 0.08, tvHeight + 0.08, tvDepth),
+    tvFrameMaterial
+  );
+  const tvScreen = new THREE.Mesh(
+    new THREE.PlaneGeometry(tvWidth, tvHeight),
+    tvScreenMaterial
+  );
+  tvScreen.position.z = tvDepth / 2 + 0.01;
+  tvGroup.add(tvFrame, tvScreen);
+  tvGroup.position.set(2.6, 1.8, roomSize.z / 2 - wallThickness / 2 - 0.08);
+  scene.add(tvGroup);
+
+  const consoleGroup = new THREE.Group();
+  const consoleWidth = 2.8;
+  const consoleHeight = 0.6;
+  const consoleDepth = 0.6;
+  const consoleBody = new THREE.Mesh(
+    new THREE.BoxGeometry(consoleWidth, consoleHeight, consoleDepth),
+    materials.wood
+  );
+  const consoleTop = new THREE.Mesh(
+    new THREE.BoxGeometry(consoleWidth + 0.05, 0.05, consoleDepth + 0.05),
+    materials.metal
+  );
+  consoleTop.position.y = consoleHeight / 2 + 0.03;
+  const consoleLegGeometry = new THREE.CylinderGeometry(0.05, 0.05, 0.2, 10);
+  const legOffsets = [
+    [-consoleWidth / 2 + 0.2, -consoleDepth / 2 + 0.2],
+    [consoleWidth / 2 - 0.2, -consoleDepth / 2 + 0.2],
+    [-consoleWidth / 2 + 0.2, consoleDepth / 2 - 0.2],
+    [consoleWidth / 2 - 0.2, consoleDepth / 2 - 0.2]
+  ];
+  legOffsets.forEach(([x, z]) => {
+    const leg = new THREE.Mesh(consoleLegGeometry, materials.metal);
+    leg.position.set(x, -consoleHeight / 2 + 0.1, z);
+    consoleGroup.add(leg);
+  });
+  consoleGroup.add(consoleBody, consoleTop);
+  consoleGroup.position.set(2.6, consoleHeight / 2, roomSize.z / 2 - wallThickness / 2 - 0.4);
+  scene.add(consoleGroup);
 }

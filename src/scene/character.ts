@@ -23,7 +23,7 @@ export function createCharacter(): Character {
 
   const loader = new GLTFLoader();
   loader.load(
-    "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb",
+    "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/RiggedFigure/glTF-Binary/RiggedFigure.glb",
     (gltf) => {
       const model = gltf.scene;
       model.traverse((child) => {
