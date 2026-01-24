@@ -1,7 +1,11 @@
 import * as THREE from "three";
 import "./ui/modal.css";
 import { createRoom, type RoomLayout } from "./scene/room";
-import { createCharacter, updateCharacterCollider } from "./scene/character";
+import {
+  createCharacter,
+  updateCharacterAnimation,
+  updateCharacterCollider
+} from "./scene/character";
 import { InputSystem } from "./systems/input";
 import { InteractionSystem } from "./systems/interaction";
 import { ItemModal, type ItemDetail } from "./ui/modal";
@@ -106,7 +110,8 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
       direction.z * cosYaw - direction.x * sinYaw
     );
     const isViewAdjusting = input.isViewAdjusting();
-    if (moveVector.lengthSq() > 0 && !isViewAdjusting) {
+    const isMoving = moveVector.lengthSq() > 0 && !isViewAdjusting;
+    if (isMoving) {
       moveVector.normalize().multiplyScalar(moveSpeed * delta);
       attemptMove(character, moveVector, colliders, roomBounds, tmpBox);
       targetRotation = Math.atan2(moveVector.x, moveVector.z);
@@ -123,6 +128,7 @@ function setupScene(items: ItemDetail[], layout: RoomLayout) {
     }
 
     updateCharacterCollider(character);
+    updateCharacterAnimation(character, delta, isMoving);
     character.mesh.rotation.y = rotateTowards(
       character.mesh.rotation.y,
       targetRotation,
@@ -176,7 +182,7 @@ function attemptMove(
 
     tmpBox.setFromCenterAndSize(
       character.mesh.position.clone(),
-      new THREE.Vector3(0.8, 1.8, 0.8)
+      character.colliderSize
     );
 
     const collided = colliders.some((collider) => tmpBox.intersectsBox(collider));
