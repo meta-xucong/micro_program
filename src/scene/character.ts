@@ -46,20 +46,19 @@ export function createCharacter(): Character {
   const resolvedBaseUrl = new URL(baseUrl, window.location.origin).toString();
   const pageBaseUrl = new URL("./", window.location.href).toString();
   const modelUrls = [
-    new URL("models/RiggedFigure.glb", resolvedBaseUrl).toString(),
-    new URL("models/RiggedFigure.glb", pageBaseUrl).toString(),
-    "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r155/examples/models/gltf/Soldier.glb",
-    "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/Soldier.glb"
+    new URL("models/UrbanCharacter.glb", resolvedBaseUrl).toString(),
+    new URL("models/UrbanCharacter.glb", pageBaseUrl).toString(),
+    "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@main/2.0/CesiumMan/glTF-Binary/CesiumMan.glb",
+    "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/CesiumMan/glTF-Binary/CesiumMan.glb"
   ];
 
   const knownHeights: Record<string, number> = {
-    "RiggedFigure.glb": 2,
-    "Soldier.glb": 1.8
+    "CesiumMan.glb": 1.8
   };
 
   const applyModel = (model: THREE.Object3D, sourceUrl: string) => {
     model.visible = true;
-    const forceNeutralMaterial = sourceUrl.includes("Soldier.glb");
+    const forceNeutralMaterial = false;
     model.traverse((child) => {
       child.visible = true;
       if (child instanceof THREE.Mesh) {
