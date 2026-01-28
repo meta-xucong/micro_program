@@ -5,97 +5,97 @@
       "id": "furn-bed",
       "type": "bed",
       "itemId": "bed-001",
-      "position": [-4.4, 0.6, -3.4],
+      "position": [-4.6, 0.6, -4.4],
       "size": [2.8, 1.1, 1.8],
-      "rotationY": 0.1
+      "rotationY": 0
     },
     {
       "id": "furn-desk",
       "type": "desk",
       "itemId": "desk-001",
-      "position": [4.5, 0.7, -3],
+      "position": [3.2, 0.7, -4.6],
       "size": [2.2, 1.1, 1.1],
-      "rotationY": -0.35
+      "rotationY": 0
     },
     {
       "id": "furn-chair",
       "type": "chair",
       "itemId": "chair-001",
-      "position": [3.6, 0.5, -1.8],
+      "position": [3.2, 0.5, -3.2],
       "size": [0.9, 1.1, 0.9],
-      "rotationY": 0.5
+      "rotationY": 3.14
     },
     {
       "id": "furn-fridge",
       "type": "fridge",
       "itemId": "fridge-001",
-      "position": [5.4, 1.1, 2.8],
+      "position": [5.4, 1.1, 2.6],
       "size": [1.0, 2.2, 1.0],
-      "rotationY": 0.1
+      "rotationY": 0.2
     },
     {
       "id": "furn-shelf",
       "type": "shelf",
       "itemId": "shelf-001",
-      "position": [-5.2, 0.9, 3.2],
+      "position": [-5.4, 0.9, 3.4],
       "size": [1.6, 1.8, 0.6],
-      "rotationY": -0.2
+      "rotationY": 1.57
     },
     {
       "id": "furn-sofa",
       "type": "sofa",
       "itemId": "sofa-001",
-      "position": [1.4, 0.8, 2.4],
+      "position": [1.8, 0.8, 1.4],
       "size": [2.6, 1.2, 1.4],
-      "rotationY": 3.05
+      "rotationY": 0
     },
     {
       "id": "furn-coffee-table",
       "type": "coffee-table",
       "itemId": "table-001",
-      "position": [1.3, 0.4, 1.2],
+      "position": [1.8, 0.4, 2.6],
       "size": [1.4, 0.6, 0.9],
-      "rotationY": 0.1
+      "rotationY": 0
     },
     {
       "id": "furn-plant",
       "type": "plant",
       "itemId": "plant-001",
-      "position": [4.6, 0.7, 4.3],
+      "position": [4.8, 0.7, 3.8],
       "size": [0.9, 1.6, 0.9],
-      "rotationY": -0.4
+      "rotationY": -0.2
     },
     {
       "id": "furn-lamp",
       "type": "lamp",
       "itemId": "lamp-001",
-      "position": [5.2, 1.6, 4.2],
+      "position": [3.8, 1.6, 3.8],
       "size": [0.8, 2.6, 0.8],
-      "rotationY": 0.3
+      "rotationY": 0.2
     },
     {
       "id": "furn-wardrobe",
       "type": "wardrobe",
       "itemId": "wardrobe-001",
-      "position": [5.2, 1.4, -0.2],
+      "position": [-5.5, 1.4, -1.2],
       "size": [1.6, 2.8, 0.9],
-      "rotationY": -0.1
+      "rotationY": 1.57
     },
     {
       "id": "furn-rug",
       "type": "rug",
       "itemId": "rug-001",
-      "position": [-2.8, 0.05, 1.6],
-      "size": [3.2, 0.1, 2.2],
-      "rotationY": 0.1
+      "position": [1.8, 0.01, 2.1],
+      "size": [3.6, 0.02, 2.4],
+      "rotationY": 0
     },
     {
       "id": "furn-bookcase",
       "type": "bookcase",
       "itemId": "bookcase-001",
-      "position": [-5.4, 1.5, -0.2],
+      "position": [-5.5, 1.5, 1.6],
       "size": [1.6, 2.8, 0.6],
-      "rotationY": 0.25
+      "rotationY": 1.57
     }
   ]
 }
