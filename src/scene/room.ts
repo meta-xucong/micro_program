@@ -593,48 +593,96 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
       break;
     }
     case "plant": {
+      const potHeight = size.y * 0.38;
       const pot = new THREE.Mesh(
-        new THREE.CylinderGeometry(size.x * 0.3, size.x * 0.4, size.y * 0.35, 12),
+        new THREE.CylinderGeometry(size.x * 0.32, size.x * 0.4, potHeight, 16),
         fabricWarm
       );
-      pot.position.y = -size.y / 2 + size.y * 0.175;
+      pot.position.y = -size.y / 2 + potHeight / 2;
+      const rim = new THREE.Mesh(
+        new THREE.TorusGeometry(size.x * 0.36, size.x * 0.04, 10, 24),
+        fabricWarm
+      );
+      rim.rotation.x = Math.PI / 2;
+      rim.position.y = pot.position.y + potHeight / 2 - size.x * 0.03;
       const soil = new THREE.Mesh(
-        new THREE.CylinderGeometry(size.x * 0.28, size.x * 0.3, size.y * 0.05, 12),
+        new THREE.CylinderGeometry(size.x * 0.3, size.x * 0.33, size.y * 0.07, 12),
         soilMaterial
       );
-      soil.position.y = pot.position.y + size.y * 0.1;
+      soil.position.y = pot.position.y + potHeight * 0.18;
       const stem = new THREE.Mesh(
-        new THREE.CylinderGeometry(size.x * 0.05, size.x * 0.06, size.y * 0.4, 8),
+        new THREE.CylinderGeometry(size.x * 0.045, size.x * 0.06, size.y * 0.45, 10),
         plantMaterial
       );
-      stem.position.y = pot.position.y + size.y * 0.35;
-      const leaves = new THREE.Mesh(
-        new THREE.SphereGeometry(size.x * 0.35, 12, 12),
+      stem.position.y = pot.position.y + potHeight * 0.6;
+      const leafGeometry = new THREE.ConeGeometry(size.x * 0.18, size.y * 0.35, 12, 1, true);
+      const leafOffsets = [
+        { angle: 0.2, height: 0.1 },
+        { angle: 1.2, height: 0.18 },
+        { angle: 2.2, height: 0.05 },
+        { angle: 3.1, height: 0.2 },
+        { angle: 4.0, height: 0.12 }
+      ];
+      leafOffsets.forEach(({ angle, height }, index) => {
+        const leaf = new THREE.Mesh(leafGeometry, plantMaterial);
+        leaf.position.set(
+          Math.cos(angle) * size.x * 0.18,
+          stem.position.y + size.y * (0.12 + height),
+          Math.sin(angle) * size.x * 0.18
+        );
+        leaf.rotation.set(Math.PI * 0.5, angle, (index % 2 === 0 ? 1 : -1) * 0.4);
+        group.add(leaf);
+      });
+      const crown = new THREE.Mesh(
+        new THREE.SphereGeometry(size.x * 0.28, 16, 16),
         plantMaterial
       );
-      leaves.position.y = stem.position.y + size.y * 0.25;
+      crown.position.y = stem.position.y + size.y * 0.35;
       interactionMesh = pot;
-      group.add(pot, soil, stem, leaves);
+      group.add(pot, rim, soil, stem, crown);
       break;
     }
     case "lamp": {
+      const baseHeight = size.y * 0.06;
       const base = new THREE.Mesh(
-        new THREE.CylinderGeometry(size.x * 0.2, size.x * 0.25, size.y * 0.05, 12),
+        new THREE.CylinderGeometry(size.x * 0.22, size.x * 0.28, baseHeight, 16),
         metalMaterial
       );
-      base.position.y = -size.y / 2 + size.y * 0.025;
+      base.position.y = -size.y / 2 + baseHeight / 2;
       const pole = new THREE.Mesh(
-        new THREE.CylinderGeometry(size.x * 0.05, size.x * 0.05, size.y * 0.6, 8),
+        new THREE.CylinderGeometry(size.x * 0.045, size.x * 0.055, size.y * 0.7, 10),
         metalMaterial
       );
-      pole.position.y = base.position.y + size.y * 0.35;
+      pole.position.y = base.position.y + size.y * 0.38;
+      const arm = new THREE.Mesh(
+        new THREE.CylinderGeometry(size.x * 0.035, size.x * 0.04, size.x * 0.6, 10),
+        metalMaterial
+      );
+      arm.rotation.z = Math.PI / 2.4;
+      arm.position.set(size.x * 0.2, pole.position.y + size.y * 0.22, 0);
       const shade = new THREE.Mesh(
-        new THREE.ConeGeometry(size.x * 0.35, size.y * 0.35, 16),
+        new THREE.CylinderGeometry(size.x * 0.36, size.x * 0.28, size.y * 0.35, 20, 1, true),
         fabricWarm
       );
-      shade.position.y = pole.position.y + size.y * 0.3;
+      shade.position.set(size.x * 0.38, arm.position.y + size.y * 0.1, 0);
+      shade.rotation.z = Math.PI / 14;
+      const cap = new THREE.Mesh(
+        new THREE.ConeGeometry(size.x * 0.12, size.y * 0.08, 16),
+        fabricWarm
+      );
+      cap.position.set(shade.position.x, shade.position.y + size.y * 0.18, 0);
+      const bulb = new THREE.Mesh(
+        new THREE.SphereGeometry(size.x * 0.09, 16, 16),
+        new THREE.MeshStandardMaterial({
+          color: 0xfef3c7,
+          emissive: new THREE.Color(0xfde68a),
+          emissiveIntensity: 0.8,
+          roughness: 0.4
+        })
+      );
+      bulb.position.set(shade.position.x, shade.position.y, 0);
       interactionMesh = shade;
-      group.add(base, pole, shade);
+      group.add(base, pole, arm, shade, cap, bulb);
       break;
     }
     case "wardrobe": {
@@ -809,6 +857,11 @@ function addRoomDetails(
   tvGroup.add(tvFrame, tvScreen);
   tvGroup.position.set(2.6, 1.8, roomSize.z / 2 - wallThickness / 2 - 0.08);
   scene.add(tvGroup);
+  tvScreen.userData = {
+    itemId: "tv-001",
+    baseColor: 0x111827
+  };
+  interactionMeshes.push(tvScreen);
 
   const consoleGroup = new THREE.Group();
   const consoleWidth = 2.8;
@@ -838,6 +891,11 @@ function addRoomDetails(
   consoleGroup.add(consoleBody, consoleTop);
   consoleGroup.position.set(2.6, consoleHeight / 2, roomSize.z / 2 - wallThickness / 2 - 0.4);
   scene.add(consoleGroup);
+  consoleBody.userData = {
+    itemId: "tv-console-001",
+    baseColor: 0xf1e4d2
+  };
+  interactionMeshes.push(consoleBody);
 
   return { interactionMeshes };
 }

@@ -72,6 +72,18 @@
     "category": "收纳"
   },
   {
+    "id": "tv-001",
+    "name": "电视",
+    "description": "用于观影与投屏的超清电视屏幕。",
+    "category": "客厅"
+  },
+  {
+    "id": "tv-console-001",
+    "name": "电视柜",
+    "description": "摆放影音设备与收纳的小电视柜。",
+    "category": "客厅"
+  },
+  {
     "id": "door-001",
     "name": "入户门",
     "description": "实木门配金属把手，点击可查看提示。",
