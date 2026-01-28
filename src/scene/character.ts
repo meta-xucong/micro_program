@@ -7,6 +7,7 @@ export type Character = {
   velocity: THREE.Vector3;
   colliderSize: THREE.Vector3;
   mixer?: THREE.AnimationMixer;
+  animationMode?: "blend" | "walk-only" | "idle-only";
   actions?: {
     idle?: THREE.AnimationAction;
     walk?: THREE.AnimationAction;
@@ -17,7 +18,7 @@ export function createCharacter(): Character {
   const group = new THREE.Group();
   group.position.set(-2, 0, -1);
 
-  const targetHeight = 1.6;
+  const targetHeight = 1.4;
   const colliderSize = new THREE.Vector3(0.6, targetHeight, 0.6);
   const capsuleRadius = colliderSize.x / 2;
   const capsuleLength = targetHeight - capsuleRadius * 2;
@@ -46,19 +47,22 @@ export function createCharacter(): Character {
   const resolvedBaseUrl = new URL(baseUrl, window.location.origin).toString();
   const pageBaseUrl = new URL("./", window.location.href).toString();
   const modelUrls = [
-    new URL("models/UrbanCharacter.glb", resolvedBaseUrl).toString(),
-    new URL("models/UrbanCharacter.glb", pageBaseUrl).toString(),
-    "https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@main/2.0/CesiumMan/glTF-Binary/CesiumMan.glb",
-    "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/CesiumMan/glTF-Binary/CesiumMan.glb"
+    "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/Xbot.glb",
+    new URL("models/Soldier.glb", resolvedBaseUrl).toString(),
+    new URL("models/Soldier.glb", pageBaseUrl).toString(),
+    new URL("models/CesiumMan.glb", resolvedBaseUrl).toString(),
+    new URL("models/CesiumMan.glb", pageBaseUrl).toString()
   ];
 
   const knownHeights: Record<string, number> = {
+    "Xbot.glb": 1.8,
+    "Soldier.glb": 1.8,
     "CesiumMan.glb": 1.8
   };
 
   const applyModel = (model: THREE.Object3D, sourceUrl: string) => {
     model.visible = true;
-    const forceNeutralMaterial = false;
+    const forceNeutralMaterial = sourceUrl.includes("Xbot.glb");
     model.traverse((child) => {
       child.visible = true;
       if (child instanceof THREE.Mesh) {
@@ -67,9 +71,10 @@ export function createCharacter(): Character {
         child.frustumCulled = false;
         if (forceNeutralMaterial) {
           const material = new THREE.MeshStandardMaterial({
-            color: 0xd1d5db,
-            roughness: 0.6,
-            metalness: 0.1
+            color: 0x9ca3af,
+            roughness: 0.75,
+            metalness: 0.05,
+            flatShading: true
           });
           if ("isSkinnedMesh" in child && (child as THREE.SkinnedMesh).isSkinnedMesh) {
             material.skinning = true;
@@ -177,24 +182,32 @@ export function createCharacter(): Character {
         if (gltf.animations.length > 0) {
           const mixer = new THREE.AnimationMixer(gltf.scene);
           const normalizedName = (name: string) => name.toLowerCase();
-          const idleClip =
-            gltf.animations.find((clip) =>
-              normalizedName(clip.name).includes("idle")
-            ) ?? gltf.animations[0];
+          const idleClip = gltf.animations.find((clip) =>
+            normalizedName(clip.name).includes("idle")
+          );
           const walkClip = gltf.animations.find((clip) => {
             const name = normalizedName(clip.name);
             return name.includes("walk") || name.includes("run");
           });
-          const idleAction = mixer.clipAction(idleClip);
-          idleAction.play();
+          let idleAction: THREE.AnimationAction | undefined;
           let walkAction: THREE.AnimationAction | undefined;
-          if (walkClip && walkClip !== idleClip) {
+          let animationMode: Character["animationMode"] = "idle-only";
+          if (idleClip && walkClip && walkClip !== idleClip) {
+            idleAction = mixer.clipAction(idleClip);
+            idleAction.play();
             walkAction = mixer.clipAction(walkClip);
             walkAction.play();
             walkAction.setEffectiveWeight(0);
+            animationMode = "blend";
+          } else if (walkClip || idleClip) {
+            const clip = walkClip ?? idleClip ?? gltf.animations[0];
+            walkAction = mixer.clipAction(clip);
+            walkAction.play();
+            animationMode = walkClip ? "walk-only" : "idle-only";
           }
           character.mixer = mixer;
           character.actions = { idle: idleAction, walk: walkAction };
+          character.animationMode = animationMode;
         }
       },
       undefined,
@@ -226,15 +239,33 @@ export function updateCharacterAnimation(
     return;
   }
 
-  const hasWalk = Boolean(character.actions.walk);
-  const walkWeight = isMoving && hasWalk ? 1 : 0;
-  const idleWeight = hasWalk ? 1 - walkWeight : 1;
+  const mode = character.animationMode ?? "blend";
+  if (mode === "blend") {
+    const hasWalk = Boolean(character.actions.walk);
+    const walkWeight = isMoving && hasWalk ? 1 : 0;
+    const idleWeight = hasWalk ? 1 - walkWeight : 1;
 
-  if (character.actions.idle) {
-    character.actions.idle.setEffectiveWeight(idleWeight);
-  }
-  if (character.actions.walk) {
-    character.actions.walk.setEffectiveWeight(walkWeight);
+    if (character.actions.idle) {
+      character.actions.idle.setEffectiveWeight(idleWeight);
+    }
+    if (character.actions.walk) {
+      character.actions.walk.setEffectiveWeight(walkWeight);
+    }
+  } else if (mode === "walk-only") {
+    const walkAction = character.actions.walk;
+    if (walkAction) {
+      walkAction.setEffectiveWeight(1);
+      if (isMoving) {
+        walkAction.paused = false;
+        walkAction.timeScale = 1;
+      } else {
+        walkAction.time = 0;
+        walkAction.timeScale = 0;
+        walkAction.paused = true;
+      }
+    }
+  } else if (character.actions.idle) {
+    character.actions.idle.setEffectiveWeight(1);
   }
 
   character.mixer.update(delta);
