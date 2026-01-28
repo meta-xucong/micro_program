@@ -29,9 +29,9 @@
       "id": "furn-fridge",
       "type": "fridge",
       "itemId": "fridge-001",
-      "position": [5.4, 1.1, 2.6],
+      "position": [5.1, 1.1, 1.2],
       "size": [1.0, 2.2, 1.0],
-      "rotationY": 0.2
+      "rotationY": 0.12
     },
     {
       "id": "furn-shelf",
@@ -61,17 +61,17 @@
       "id": "furn-plant",
       "type": "plant",
       "itemId": "plant-001",
-      "position": [4.8, 0.7, 3.8],
+      "position": [3.7, 0.75, 4.4],
       "size": [0.9, 1.6, 0.9],
-      "rotationY": -0.2
+      "rotationY": -0.35
     },
     {
       "id": "furn-lamp",
       "type": "lamp",
       "itemId": "lamp-001",
-      "position": [3.8, 1.6, 3.8],
+      "position": [2.6, 1.6, 4.2],
       "size": [0.8, 2.6, 0.8],
-      "rotationY": 0.2
+      "rotationY": 0.35
     },
     {
       "id": "furn-wardrobe",
