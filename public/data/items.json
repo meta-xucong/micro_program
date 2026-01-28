@@ -70,5 +70,17 @@
     "name": "书柜",
     "description": "放置书籍与摆件的高书柜。",
     "category": "收纳"
+  },
+  {
+    "id": "door-001",
+    "name": "入户门",
+    "description": "实木门配金属把手，点击可查看提示。",
+    "category": "建筑"
+  },
+  {
+    "id": "window-001",
+    "name": "窗户",
+    "description": "双层玻璃窗，带有采光与通风功能。",
+    "category": "建筑"
   }
 ]

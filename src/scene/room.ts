@@ -42,7 +42,6 @@ type FurnitureMaterials = {
   rug: THREE.MeshStandardMaterial;
   glass: THREE.MeshPhysicalMaterial;
   door: THREE.MeshStandardMaterial;
-  windowPane: THREE.MeshStandardMaterial;
   windowFrame: THREE.MeshStandardMaterial;
   wallTrim: THREE.MeshStandardMaterial;
   ceiling: THREE.MeshStandardMaterial;
@@ -172,17 +171,6 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     },
     1.6
   );
-  const windowPaneTextures = loadPbrTextures(
-    {
-      color:
-        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rollershutter_window_01/rollershutter_window_01_diff_1k.jpg",
-      roughness:
-        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rollershutter_window_01/rollershutter_window_01_rough_1k.jpg",
-      normal:
-        "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rollershutter_window_01/rollershutter_window_01_nor_gl_1k.jpg"
-    },
-    1.2
-  );
   const doorTextures = loadPbrTextures(
     {
       color:
@@ -286,33 +274,26 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     glass: new THREE.MeshPhysicalMaterial({
       color: 0xe0f2fe,
       transparent: true,
-      opacity: 0.55,
-      roughness: 0.08,
+      opacity: 0.35,
+      roughness: 0.12,
       metalness: 0,
-      transmission: 0.85,
-      thickness: 0.2,
+      transmission: 0.95,
+      thickness: 0.15,
       ior: 1.5,
-      clearcoat: 0.4,
-      clearcoatRoughness: 0.15
+      clearcoat: 0.25,
+      clearcoatRoughness: 0.2
     }),
     door: new THREE.MeshStandardMaterial({
       ...doorTextures,
-      color: new THREE.Color(0xffffff),
+      color: new THREE.Color(0xfdf6ed),
       metalness: 0.1,
-      roughness: 0.55
-    }),
-    windowPane: new THREE.MeshStandardMaterial({
-      ...windowPaneTextures,
-      color: new THREE.Color(0xffffff),
-      roughness: 0.5,
-      emissive: new THREE.Color(0xbfd7ff),
-      emissiveIntensity: 0.25
+      roughness: 0.45
     }),
     windowFrame: new THREE.MeshStandardMaterial({
       ...windowFrameTextures,
-      color: new THREE.Color(0xf8fafc),
-      metalness: 0.2,
-      roughness: 0.55
+      color: new THREE.Color(0xf1f5f9),
+      metalness: 0.25,
+      roughness: 0.5
     }),
     wallTrim: new THREE.MeshStandardMaterial({
       color: 0xcbd5e1,
@@ -357,7 +338,7 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     walls.push(wall);
   });
 
-  addRoomDetails(scene, roomSize, wallThickness, materials);
+  const { interactionMeshes } = addRoomDetails(scene, roomSize, wallThickness, materials);
 
   const itemMap = new Map<string, ItemDetail>();
   items.forEach((item) => itemMap.set(item.id, item));
@@ -382,8 +363,14 @@ export function createRoom(scene: THREE.Scene, layout: RoomLayout, items: ItemDe
     furniture.push(interactionMesh);
     scene.add(group);
 
-    const collider = new THREE.Box3().setFromObject(group);
-    colliders.push(collider);
+    if (layoutItem.type !== "rug") {
+      const collider = new THREE.Box3().setFromObject(group);
+      colliders.push(collider);
+    }
+  });
+
+  interactionMeshes.forEach((mesh) => {
+    furniture.push(mesh);
   });
 
   walls.forEach((wall) => {
@@ -432,13 +419,19 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
 
       const mattress = new THREE.Mesh(
         new THREE.BoxGeometry(size.x * 0.95, mattressHeight, size.z * 0.95),
-        fabricBlue
+        fabricGray
       );
       mattress.position.y = frame.position.y + frameHeight / 2 + mattressHeight / 2;
 
+      const blanket = new THREE.Mesh(
+        new THREE.BoxGeometry(size.x * 0.9, mattressHeight * 0.2, size.z * 0.6),
+        fabricWarm
+      );
+      blanket.position.set(0, mattress.position.y + mattressHeight * 0.15, size.z * 0.12);
+
       const headboard = new THREE.Mesh(
         new THREE.BoxGeometry(size.x, headboardHeight, size.z * 0.2),
-        fabricGray
+        fabricBlue
       );
       headboard.position.set(
         0,
@@ -453,7 +446,7 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
       pillow.position.set(-size.x * 0.2, mattress.position.y + mattressHeight * 0.35, -size.z * 0.25);
 
       interactionMesh = mattress;
-      group.add(frame, mattress, headboard, pillow);
+      group.add(frame, mattress, blanket, headboard, pillow);
       break;
     }
     case "desk": {
@@ -535,10 +528,13 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
       break;
     }
     case "shelf": {
-      const frame = new THREE.Mesh(new THREE.BoxGeometry(size.x, size.y, size.z), woodMaterial);
+      const frame = new THREE.Mesh(
+        new THREE.BoxGeometry(size.x, size.y, size.z),
+        bookcaseMaterial
+      );
       const shelf = new THREE.Mesh(
         new THREE.BoxGeometry(size.x * 0.9, size.y * 0.08, size.z * 0.9),
-        woodMaterial
+        bookcaseMaterial
       );
       const shelf2 = shelf.clone();
       shelf.position.y = -size.y * 0.15;
@@ -644,7 +640,7 @@ function createFurniture(layoutItem: LayoutItem, materials: FurnitureMaterials):
     case "wardrobe": {
       const body = new THREE.Mesh(
         new THREE.BoxGeometry(size.x, size.y, size.z),
-        woodMaterial
+        bookcaseMaterial
       );
       const handle1 = new THREE.Mesh(
         new THREE.BoxGeometry(size.x * 0.05, size.y * 0.3, size.z * 0.05),
@@ -699,7 +695,8 @@ function addRoomDetails(
   roomSize: THREE.Vector3,
   wallThickness: number,
   materials: FurnitureMaterials
-) {
+): { interactionMeshes: THREE.Mesh[] } {
+  const interactionMeshes: THREE.Mesh[] = [];
   const ceilingGeometry = new THREE.PlaneGeometry(roomSize.x, roomSize.z);
   const ceiling = new THREE.Mesh(ceilingGeometry, materials.ceiling);
   ceiling.rotation.x = Math.PI / 2;
@@ -742,6 +739,11 @@ function addRoomDetails(
   doorGroup.add(doorFrame, doorPanel, handle);
   doorGroup.position.set(-roomSize.x / 6, doorHeight / 2, roomSize.z / 2 - wallThickness / 2);
   scene.add(doorGroup);
+  doorPanel.userData = {
+    itemId: "door-001",
+    baseColor: 0xfdf6ed
+  };
+  interactionMeshes.push(doorPanel);
 
   const windowWidth = 1.8;
   const windowHeight = 1.1;
@@ -752,16 +754,32 @@ function addRoomDetails(
   );
   const glass = new THREE.Mesh(
     new THREE.BoxGeometry(windowWidth, windowHeight, 0.05),
-    materials.windowPane
+    materials.glass
   );
+  glass.name = "window-glass";
   windowGroup.add(frame, glass);
   windowGroup.position.set(0, 1.6, -roomSize.z / 2 + wallThickness / 2);
   scene.add(windowGroup);
+  glass.userData = {
+    itemId: "window-001",
+    baseColor: 0xe0f2fe
+  };
+  interactionMeshes.push(glass);
 
   const sideWindow = windowGroup.clone();
   sideWindow.rotation.y = Math.PI / 2;
   sideWindow.position.set(roomSize.x / 2 - wallThickness / 2, 1.7, 0.8);
   scene.add(sideWindow);
+  const sideGlass = sideWindow.children.find(
+    (child) => child instanceof THREE.Mesh && child.name === "window-glass"
+  ) as THREE.Mesh | undefined;
+  if (sideGlass) {
+    sideGlass.userData = {
+      itemId: "window-001",
+      baseColor: 0xe0f2fe
+    };
+    interactionMeshes.push(sideGlass);
+  }
 
   const tvGroup = new THREE.Group();
   const tvWidth = 2.4;
@@ -820,4 +838,6 @@ function addRoomDetails(
   consoleGroup.add(consoleBody, consoleTop);
   consoleGroup.position.set(2.6, consoleHeight / 2, roomSize.z / 2 - wallThickness / 2 - 0.4);
   scene.add(consoleGroup);
+
+  return { interactionMeshes };
 }
